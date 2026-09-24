@@ -1,0 +1,15 @@
+seed: 42
+
+model:
+  sentence_transformer: "sentence-transformers/all-MiniLM-L6-v2"
+
+experiment:
+  bootstrap_iterations: 5000
+  permutation_iterations: 10000
+  temperature: 0.07
+
+paths:
+  concrete: "data/concepts/concrete.json"
+  abstract: "data/concepts/abstract.json"
+  novel: "data/concepts/novel.json"
+  results: "results"
