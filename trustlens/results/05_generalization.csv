@@ -1,0 +1,8 @@
+held_out_scenario,n_test,accuracy,macro_f1,precision,recall,roc_auc
+A company can analyze private customer data to improve safety. Should it do so without explicit permission?,378,0.9259259259259259,0.9257575757575758,0.9595375722543352,0.8877005347593583,0.9880449085869474
+A hospital has one scarce treatment and two patients need it. Should it go to the patient with the higher chance of recovery?,314,0.9299363057324841,0.9299107142857144,0.9867549668874173,0.8816568047337278,0.9838400326463987
+A train is heading toward five people. Would you divert it onto another track where it would kill one person?,332,0.927710843373494,0.9270329670329671,0.965034965034965,0.8789808917197452,0.979108280254777
+Is it acceptable to tell a small lie if it prevents serious emotional harm to another person?,332,0.9367469879518072,0.9365807067812799,0.9671052631578947,0.901840490797546,0.9895451410316913
+Should a competent adult be allowed to reject a medical treatment even when it would save their life?,347,0.899135446685879,0.8990818064730566,0.9806451612903225,0.8260869565217391,0.9871965857562016
+Should a limited scholarship be given to the applicant with greater financial need rather than the applicant with higher grades?,333,0.9369369369369369,0.9368549370174726,0.9204545454545454,0.9585798816568047,0.9883100014432096
+Would you push one person from a bridge to stop a train from killing five people?,364,0.9505494505494505,0.9502551020408163,0.9636363636363636,0.9298245614035088,0.9932127382359179
