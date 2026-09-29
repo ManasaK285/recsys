@@ -1,0 +1,6 @@
+concern,precision,recall,f1,support
+accessibility,1.0,1.0,1.0,62
+privacy,1.0,1.0,1.0,112
+academic_integrity,1.0,1.0,1.0,119
+language_access,1.0,1.0,1.0,50
+teacher_workload,1.0,1.0,1.0,95
