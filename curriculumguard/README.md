@@ -277,8 +277,3 @@ For real deployments, also: hand-label 100 to 200 comments and report extractor 
 17. Lewis, P., et al. (2020). Retrieval-augmented generation for knowledge-intensive NLP tasks. *NeurIPS 33*.
 18. Reimers, N., & Gurevych, I. (2019). Sentence-BERT: Sentence embeddings using Siamese BERT-networks. *Proceedings of EMNLP-IJCNLP 2019*.
 19. Gebru, T., et al. (2021). Datasheets for datasets. *Communications of the ACM*, 64(12), 86-92.
-
-*Please verify citation details against the original sources before publishing.*
-
-## License
-Add a `LICENSE` file (for example MIT) before publishing.
