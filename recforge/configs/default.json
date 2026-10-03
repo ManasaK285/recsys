@@ -1,0 +1,11 @@
+{
+  "top_k": 10,
+  "candidate_k": 100,
+  "max_history": 20,
+  "embed_dim": 64,
+  "hidden_dim": 128,
+  "epochs": 4,
+  "batch_size": 256,
+  "learning_rate": 0.001,
+  "positive_rating_threshold": 4.0
+}
