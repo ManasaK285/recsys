@@ -1,4 +1,0 @@
-name: metadbg
-parallel_agents: 3
-verification: true
-meta_debugging: true

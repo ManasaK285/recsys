@@ -1,9 +1,0 @@
-__pycache__/
-*.pyc
-.venv/
-artifacts/*.pt
-artifacts/*.csv
-artifacts/*.json
-data/processed/*.csv
-.pytest_cache/
-.streamlit/

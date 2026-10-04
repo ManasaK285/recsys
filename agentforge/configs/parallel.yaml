@@ -1,4 +1,0 @@
-name: parallel
-parallel_agents: 3
-verification: true
-meta_debugging: false

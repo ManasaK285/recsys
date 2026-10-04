@@ -1,4 +1,0 @@
-name: baseline
-parallel_agents: 1
-verification: false
-meta_debugging: false
