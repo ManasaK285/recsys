@@ -167,7 +167,6 @@ resa_ltr/
     └── test_pipeline.py
 ```
 
-## Portfolio angle
 
 This project demonstrates:
 
