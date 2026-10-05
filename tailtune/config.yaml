@@ -1,0 +1,36 @@
+seed: 42
+
+paths:
+  raw_dir: data/raw
+  processed_dir: data/processed
+  checkpoint_dir: checkpoints
+  results_dir: results
+
+data:
+  max_seq_len: 50
+  min_interactions: 5
+  head_fraction: 0.20
+  tail_fraction: 0.20
+
+model:
+  embedding_dim: 128
+  num_heads: 4
+  num_layers: 2
+  dropout: 0.2
+  max_seq_len: 50
+
+training:
+  batch_size: 256
+  epochs: 20
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  num_negatives: 100
+  eval_k: 10
+  patience: 3
+
+barlow_twins:
+  alpha: 0.2
+  lambda_offdiag: 0.005
+
+evaluation:
+  ks: [5, 10, 20]
