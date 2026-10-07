@@ -1,0 +1,36 @@
+seed: 42
+
+model:
+  hidden_dim: 128
+  n_heads: 4
+  n_layers: 2
+  dropout: 0.1
+  codebook_size: 64
+  code_length: 3
+  max_history: 20
+  temperature: 0.2
+  manifold_dim: 64
+
+tokenizer:
+  text_model: sentence-transformers/all-MiniLM-L6-v2
+  top_k_neighbors: 5
+  codebook_epochs: 8
+  codebook_lr: 0.002
+  gate_hidden: 64
+
+train:
+  epochs: 10
+  batch_size: 64
+  lr: 0.0008
+  weight_decay: 0.00001
+  alpha_contrastive: 0.10
+  beta_manifold: 0.05
+  grad_clip: 1.0
+  patience: 3
+ablation:
+  collaborative_tokenization: true
+  semantic_guided_generation: true
+  manifold_alignment: true
+data:
+  min_user_interactions: 5
+  max_items: 2000
