@@ -1,0 +1,301 @@
+id,group,subgroup,stance,severity,text,gold_concerns
+0,parent,none,constrained,4,AI should be allowed with clear rules and disclosure. Nobody has explained the data collection behind these AI apps.,privacy
+1,teacher,none,restricted,2,I would limit AI use to specific supervised activities only at best. Teachers already face a heavy workload and this adds extra work. Privacy of children's personal information needs strong protection.,teacher_workload|privacy
+2,admin,none,constrained,2,AI should be allowed with clear rules and disclosure. Privacy of children's personal information needs strong protection.,privacy
+3,parent,none,constrained,1,Use AI for some tasks under teacher guidance. I worry about student data being collected and shared with vendors.,privacy
+4,student,none,open,3,"Let students use AI freely in class. Families need language access, and translate tools can help. I worry about student data being collected and shared with vendors.",language_access|privacy
+5,admin,none,constrained,3,Use AI for some tasks under teacher guidance. Teachers already face a heavy workload and this adds extra work.,teacher_workload
+6,parent,none,constrained,1,Use AI for some tasks under teacher guidance. Nobody has explained the data collection behind these AI apps.,privacy
+7,parent,none,open,3,I want AI tools allowed for learning. Privacy of children's personal information needs strong protection.,privacy
+8,student,none,open,3,Let students use AI freely in class. Students with disabilities need accessible tools that work with screen readers.,accessibility
+9,teacher,none,restricted,3,I would limit AI use to specific supervised activities only at best. Nobody has explained the data collection behind these AI apps. There is no training time or grading time to manage AI use.,privacy|teacher_workload
+10,teacher,none,restricted,4,I would limit AI use to specific supervised activities only at best. Privacy of children's personal information needs strong protection.,privacy
+11,admin,none,constrained,4,Use AI for some tasks under teacher guidance. English learners face a language barrier that AI translation might ease. Students with disabilities need accessible tools that work with screen readers.,language_access|accessibility
+12,parent,none,constrained,2,Use AI for some tasks under teacher guidance. It is hard to know if submitted work is original work.,academic_integrity
+13,parent,none,restricted,4,AI should be restricted in classrooms for now. Students with disabilities need accessible tools that work with screen readers.,accessibility
+14,teacher,none,open,1,I want AI tools allowed for learning. Students could cheat by having AI write their essays. Teachers already face a heavy workload and this adds extra work.,academic_integrity|teacher_workload
+15,teacher,none,restricted,4,AI should be restricted in classrooms for now. Rolling this out will overwhelm staff and cause burnout. It is hard to know if submitted work is original work.,teacher_workload|academic_integrity
+16,teacher,none,restricted,1,I would limit AI use to specific supervised activities only at best. There is no training time or grading time to manage AI use. I worry about student data being collected and shared with vendors.,teacher_workload|privacy
+17,student,none,open,1,Let students use AI freely in class. Students with disabilities need accessible tools that work with screen readers.,accessibility
+18,parent,none,restricted,3,AI should be restricted in classrooms for now. English learners face a language barrier that AI translation might ease. It is hard to know if submitted work is original work.,language_access|academic_integrity
+19,parent,none,restricted,3,AI should be restricted in classrooms for now. Academic integrity is at risk and AI detectors seem unreliable. Privacy of children's personal information needs strong protection.,academic_integrity|privacy
+20,parent,none,open,4,I want AI tools allowed for learning. I worry about student data being collected and shared with vendors. Students with disabilities need accessible tools that work with screen readers.,privacy|accessibility
+21,teacher,none,restricted,1,I would limit AI use to specific supervised activities only at best. Teachers already face a heavy workload and this adds extra work. It is hard to know if submitted work is original work.,teacher_workload|academic_integrity
+22,admin,none,constrained,3,Use AI for some tasks under teacher guidance. Academic integrity is at risk and AI detectors seem unreliable. Privacy of children's personal information needs strong protection.,academic_integrity|privacy
+23,admin,none,constrained,4,Use AI for some tasks under teacher guidance. Privacy of children's personal information needs strong protection.,privacy
+24,parent,none,restricted,4,AI should be restricted in classrooms for now. Privacy of children's personal information needs strong protection.,privacy
+25,student,multilingual,open,1,Let students use AI freely in class. It is hard to know if submitted work is original work. Students with disabilities need accessible tools that work with screen readers.,academic_integrity|accessibility
+26,teacher,none,restricted,1,I would limit AI use to specific supervised activities only at best. It is hard to know if submitted work is original work. Teachers already face a heavy workload and this adds extra work.,academic_integrity|teacher_workload
+27,student,none,open,4,Let students use AI freely in class. Text-to-speech and captioning support must be available to every learner.,accessibility
+28,student,disability,restricted,5,AI should be restricted in classrooms for now. Text-to-speech and captioning support must be available to every learner.,accessibility
+29,parent,none,constrained,2,AI should be allowed with clear rules and disclosure. I worry about student data being collected and shared with vendors.,privacy
+30,parent,none,constrained,3,AI should be allowed with clear rules and disclosure. Students could cheat by having AI write their essays. I worry about student data being collected and shared with vendors.,academic_integrity|privacy
+31,admin,none,constrained,1,Use AI for some tasks under teacher guidance. Text-to-speech and captioning support must be available to every learner.,accessibility
+32,teacher,none,restricted,2,I would limit AI use to specific supervised activities only at best. Students could cheat by having AI write their essays.,academic_integrity
+33,teacher,none,restricted,4,I would limit AI use to specific supervised activities only at best. Academic integrity is at risk and AI detectors seem unreliable. There is no training time or grading time to manage AI use.,academic_integrity|teacher_workload
+34,teacher,none,constrained,2,AI should be allowed with clear rules and disclosure. English learners face a language barrier that AI translation might ease. Academic integrity is at risk and AI detectors seem unreliable.,language_access|academic_integrity
+35,student,none,restricted,1,"I would limit AI use to specific supervised activities only at best. Families need language access, and translate tools can help.",language_access
+36,student,none,constrained,4,Use AI for some tasks under teacher guidance. Academic integrity is at risk and AI detectors seem unreliable.,academic_integrity
+37,teacher,none,constrained,4,AI should be allowed with clear rules and disclosure. Teachers already face a heavy workload and this adds extra work.,teacher_workload
+38,teacher,none,restricted,3,AI should be restricted in classrooms for now. Students could cheat by having AI write their essays.,academic_integrity
+39,parent,none,open,3,I want AI tools allowed for learning. Multilingual students could use translation to follow lessons.,language_access
+40,teacher,none,open,4,I want AI tools allowed for learning. Teachers already face a heavy workload and this adds extra work.,teacher_workload
+41,parent,none,constrained,3,Use AI for some tasks under teacher guidance. There is no training time or grading time to manage AI use. Nobody has explained the data collection behind these AI apps.,teacher_workload|privacy
+42,parent,none,restricted,2,AI should be restricted in classrooms for now. Students could cheat by having AI write their essays.,academic_integrity
+43,teacher,none,restricted,3,I would limit AI use to specific supervised activities only at best. Privacy of children's personal information needs strong protection. Students could cheat by having AI write their essays.,privacy|academic_integrity
+44,parent,none,restricted,1,AI should be restricted in classrooms for now. Privacy of children's personal information needs strong protection.,privacy
+45,parent,none,open,2,I want AI tools allowed for learning. Nobody has explained the data collection behind these AI apps. English learners face a language barrier that AI translation might ease.,privacy|language_access
+46,teacher,none,constrained,2,Use AI for some tasks under teacher guidance. There is no training time or grading time to manage AI use.,teacher_workload
+47,teacher,none,restricted,1,AI should be restricted in classrooms for now. Rolling this out will overwhelm staff and cause burnout. Students could cheat by having AI write their essays.,teacher_workload|academic_integrity
+48,parent,none,restricted,3,I would limit AI use to specific supervised activities only at best. Privacy of children's personal information needs strong protection.,privacy
+49,student,none,constrained,2,AI should be allowed with clear rules and disclosure. Students with disabilities need accessible tools that work with screen readers.,accessibility
+50,student,none,open,2,I want AI tools allowed for learning. Multilingual students could use translation to follow lessons.,language_access
+51,student,multilingual,open,3,Let students use AI freely in class. Multilingual students could use translation to follow lessons.,language_access
+52,parent,none,open,1,I want AI tools allowed for learning. Nobody has explained the data collection behind these AI apps. Students could cheat by having AI write their essays.,privacy|academic_integrity
+53,parent,none,restricted,3,AI should be restricted in classrooms for now. I worry about student data being collected and shared with vendors. Students could cheat by having AI write their essays.,privacy|academic_integrity
+54,parent,none,restricted,2,AI should be restricted in classrooms for now. Privacy of children's personal information needs strong protection.,privacy
+55,parent,none,open,4,I want AI tools allowed for learning. Nobody has explained the data collection behind these AI apps. Students could cheat by having AI write their essays.,privacy|academic_integrity
+56,teacher,none,open,4,I want AI tools allowed for learning. Rolling this out will overwhelm staff and cause burnout. Academic integrity is at risk and AI detectors seem unreliable.,teacher_workload|academic_integrity
+57,teacher,none,restricted,3,I would limit AI use to specific supervised activities only at best. It is hard to know if submitted work is original work.,academic_integrity
+58,student,none,open,4,I want AI tools allowed for learning. Nobody has explained the data collection behind these AI apps.,privacy
+59,student,none,open,1,I want AI tools allowed for learning. Assistive features could really help some students if the tools are accessible.,accessibility
+60,parent,none,restricted,3,AI should be restricted in classrooms for now. Students could cheat by having AI write their essays. Nobody has explained the data collection behind these AI apps.,academic_integrity|privacy
+61,teacher,none,restricted,1,AI should be restricted in classrooms for now. Academic integrity is at risk and AI detectors seem unreliable.,academic_integrity
+62,teacher,none,restricted,1,AI should be restricted in classrooms for now. Teachers already face a heavy workload and this adds extra work. Nobody has explained the data collection behind these AI apps.,teacher_workload|privacy
+63,parent,none,restricted,4,I would limit AI use to specific supervised activities only at best. Privacy of children's personal information needs strong protection.,privacy
+64,parent,none,restricted,2,I would limit AI use to specific supervised activities only at best. There is no training time or grading time to manage AI use.,teacher_workload
+65,teacher,none,constrained,4,Use AI for some tasks under teacher guidance. Teachers already face a heavy workload and this adds extra work. Assistive features could really help some students if the tools are accessible.,teacher_workload|accessibility
+66,teacher,none,restricted,2,I would limit AI use to specific supervised activities only at best. I worry about student data being collected and shared with vendors. It is hard to know if submitted work is original work.,privacy|academic_integrity
+67,teacher,none,restricted,4,I would limit AI use to specific supervised activities only at best. Academic integrity is at risk and AI detectors seem unreliable.,academic_integrity
+68,student,disability,restricted,5,AI should be restricted in classrooms for now. Text-to-speech and captioning support must be available to every learner. I worry about student data being collected and shared with vendors.,accessibility|privacy
+69,teacher,none,restricted,1,AI should be restricted in classrooms for now. Academic integrity is at risk and AI detectors seem unreliable.,academic_integrity
+70,teacher,none,constrained,4,AI should be allowed with clear rules and disclosure. Teachers already face a heavy workload and this adds extra work. Academic integrity is at risk and AI detectors seem unreliable.,teacher_workload|academic_integrity
+71,teacher,none,restricted,2,AI should be restricted in classrooms for now. Students could cheat by having AI write their essays. Teachers already face a heavy workload and this adds extra work.,academic_integrity|teacher_workload
+72,admin,none,constrained,1,AI should be allowed with clear rules and disclosure. Teachers already face a heavy workload and this adds extra work.,teacher_workload
+73,teacher,none,constrained,4,Use AI for some tasks under teacher guidance. I worry about student data being collected and shared with vendors.,privacy
+74,student,none,open,2,I want AI tools allowed for learning. Students with disabilities need accessible tools that work with screen readers.,accessibility
+75,teacher,none,restricted,1,I would limit AI use to specific supervised activities only at best. Students could cheat by having AI write their essays. Teachers already face a heavy workload and this adds extra work.,academic_integrity|teacher_workload
+76,teacher,none,constrained,4,Use AI for some tasks under teacher guidance. Privacy of children's personal information needs strong protection. Teachers already face a heavy workload and this adds extra work.,privacy|teacher_workload
+77,parent,none,constrained,2,AI should be allowed with clear rules and disclosure. I worry about student data being collected and shared with vendors.,privacy
+78,teacher,none,restricted,2,I would limit AI use to specific supervised activities only at best. There is no training time or grading time to manage AI use.,teacher_workload
+79,parent,none,restricted,1,AI should be restricted in classrooms for now. Academic integrity is at risk and AI detectors seem unreliable. Privacy of children's personal information needs strong protection.,academic_integrity|privacy
+80,parent,none,restricted,2,AI should be restricted in classrooms for now. Academic integrity is at risk and AI detectors seem unreliable. Nobody has explained the data collection behind these AI apps.,academic_integrity|privacy
+81,teacher,none,restricted,2,I would limit AI use to specific supervised activities only at best. I worry about student data being collected and shared with vendors.,privacy
+82,parent,none,restricted,3,I would limit AI use to specific supervised activities only at best. It is hard to know if submitted work is original work. Nobody has explained the data collection behind these AI apps.,academic_integrity|privacy
+83,student,none,open,1,I want AI tools allowed for learning. Academic integrity is at risk and AI detectors seem unreliable.,academic_integrity
+84,student,multilingual,constrained,3,AI should be allowed with clear rules and disclosure. Students with disabilities need accessible tools that work with screen readers.,accessibility
+85,student,none,constrained,3,Use AI for some tasks under teacher guidance. Multilingual students could use translation to follow lessons.,language_access
+86,parent,none,constrained,2,Use AI for some tasks under teacher guidance. It is hard to know if submitted work is original work.,academic_integrity
+87,teacher,none,restricted,2,AI should be restricted in classrooms for now. Teachers already face a heavy workload and this adds extra work. Academic integrity is at risk and AI detectors seem unreliable.,teacher_workload|academic_integrity
+88,student,none,constrained,3,AI should be allowed with clear rules and disclosure. Multilingual students could use translation to follow lessons. It is hard to know if submitted work is original work.,language_access|academic_integrity
+89,teacher,none,constrained,2,Use AI for some tasks under teacher guidance. Teachers already face a heavy workload and this adds extra work.,teacher_workload
+90,student,multilingual,constrained,5,Use AI for some tasks under teacher guidance. English learners face a language barrier that AI translation might ease.,language_access
+91,parent,none,restricted,3,AI should be restricted in classrooms for now. Academic integrity is at risk and AI detectors seem unreliable. Privacy of children's personal information needs strong protection.,academic_integrity|privacy
+92,teacher,none,constrained,4,Use AI for some tasks under teacher guidance. It is hard to know if submitted work is original work.,academic_integrity
+93,teacher,none,restricted,2,I would limit AI use to specific supervised activities only at best. It is hard to know if submitted work is original work.,academic_integrity
+94,teacher,none,constrained,3,Use AI for some tasks under teacher guidance. There is no training time or grading time to manage AI use.,teacher_workload
+95,parent,none,restricted,2,I would limit AI use to specific supervised activities only at best. I worry about student data being collected and shared with vendors.,privacy
+96,teacher,none,constrained,4,AI should be allowed with clear rules and disclosure. Text-to-speech and captioning support must be available to every learner. There is no training time or grading time to manage AI use.,accessibility|teacher_workload
+97,student,disability,open,5,Let students use AI freely in class. Students with disabilities need accessible tools that work with screen readers.,accessibility
+98,student,none,open,1,I want AI tools allowed for learning. English learners face a language barrier that AI translation might ease.,language_access
+99,admin,none,open,3,Let students use AI freely in class. It is hard to know if submitted work is original work.,academic_integrity
+100,admin,none,constrained,3,AI should be allowed with clear rules and disclosure. Rolling this out will overwhelm staff and cause burnout. Nobody has explained the data collection behind these AI apps.,teacher_workload|privacy
+101,parent,none,constrained,1,Use AI for some tasks under teacher guidance. I worry about student data being collected and shared with vendors. Students could cheat by having AI write their essays.,privacy|academic_integrity
+102,teacher,none,open,1,I want AI tools allowed for learning. Rolling this out will overwhelm staff and cause burnout. It is hard to know if submitted work is original work.,teacher_workload|academic_integrity
+103,admin,none,restricted,4,I would limit AI use to specific supervised activities only at best. There is no training time or grading time to manage AI use. Text-to-speech and captioning support must be available to every learner.,teacher_workload|accessibility
+104,parent,none,constrained,3,Use AI for some tasks under teacher guidance. Nobody has explained the data collection behind these AI apps. Text-to-speech and captioning support must be available to every learner.,privacy|accessibility
+105,parent,none,constrained,1,AI should be allowed with clear rules and disclosure. Students could cheat by having AI write their essays. I worry about student data being collected and shared with vendors.,academic_integrity|privacy
+106,teacher,none,restricted,1,I would limit AI use to specific supervised activities only at best. It is hard to know if submitted work is original work. Rolling this out will overwhelm staff and cause burnout.,academic_integrity|teacher_workload
+107,teacher,none,restricted,3,I would limit AI use to specific supervised activities only at best. Academic integrity is at risk and AI detectors seem unreliable. Nobody has explained the data collection behind these AI apps.,academic_integrity|privacy
+108,student,none,constrained,2,AI should be allowed with clear rules and disclosure. Assistive features could really help some students if the tools are accessible. Privacy of children's personal information needs strong protection.,accessibility|privacy
+109,admin,none,constrained,3,Use AI for some tasks under teacher guidance. I worry about student data being collected and shared with vendors.,privacy
+110,teacher,none,restricted,4,AI should be restricted in classrooms for now. Nobody has explained the data collection behind these AI apps. Rolling this out will overwhelm staff and cause burnout.,privacy|teacher_workload
+111,teacher,none,constrained,1,AI should be allowed with clear rules and disclosure. There is no training time or grading time to manage AI use. Text-to-speech and captioning support must be available to every learner.,teacher_workload|accessibility
+112,teacher,none,restricted,2,AI should be restricted in classrooms for now. Rolling this out will overwhelm staff and cause burnout. Academic integrity is at risk and AI detectors seem unreliable.,teacher_workload|academic_integrity
+113,teacher,none,restricted,1,AI should be restricted in classrooms for now. Multilingual students could use translation to follow lessons. Teachers already face a heavy workload and this adds extra work.,language_access|teacher_workload
+114,student,none,open,4,"I want AI tools allowed for learning. Families need language access, and translate tools can help.",language_access
+115,admin,none,constrained,2,Use AI for some tasks under teacher guidance. It is hard to know if submitted work is original work.,academic_integrity
+116,parent,none,open,4,Let students use AI freely in class. I worry about student data being collected and shared with vendors. Academic integrity is at risk and AI detectors seem unreliable.,privacy|academic_integrity
+117,parent,none,restricted,3,AI should be restricted in classrooms for now. Nobody has explained the data collection behind these AI apps.,privacy
+118,teacher,none,constrained,4,AI should be allowed with clear rules and disclosure. Students could cheat by having AI write their essays. There is no training time or grading time to manage AI use.,academic_integrity|teacher_workload
+119,parent,none,restricted,3,I would limit AI use to specific supervised activities only at best. Students with disabilities need accessible tools that work with screen readers. Privacy of children's personal information needs strong protection.,accessibility|privacy
+120,teacher,none,restricted,1,I would limit AI use to specific supervised activities only at best. It is hard to know if submitted work is original work. English learners face a language barrier that AI translation might ease.,academic_integrity|language_access
+121,parent,none,constrained,1,AI should be allowed with clear rules and disclosure. Privacy of children's personal information needs strong protection. Students with disabilities need accessible tools that work with screen readers.,privacy|accessibility
+122,student,none,constrained,1,AI should be allowed with clear rules and disclosure. Students with disabilities need accessible tools that work with screen readers.,accessibility
+123,teacher,none,restricted,3,I would limit AI use to specific supervised activities only at best. There is no training time or grading time to manage AI use.,teacher_workload
+124,student,multilingual,open,3,I want AI tools allowed for learning. Multilingual students could use translation to follow lessons.,language_access
+125,teacher,none,open,1,Let students use AI freely in class. Academic integrity is at risk and AI detectors seem unreliable.,academic_integrity
+126,teacher,none,open,3,Let students use AI freely in class. There is no training time or grading time to manage AI use. It is hard to know if submitted work is original work.,teacher_workload|academic_integrity
+127,student,disability,open,3,"Let students use AI freely in class. Text-to-speech and captioning support must be available to every learner. Families need language access, and translate tools can help.",accessibility|language_access
+128,student,multilingual,open,3,Let students use AI freely in class. English learners face a language barrier that AI translation might ease.,language_access
+129,teacher,none,open,4,I want AI tools allowed for learning. Nobody has explained the data collection behind these AI apps.,privacy
+130,student,none,open,3,"Let students use AI freely in class. Privacy of children's personal information needs strong protection. Families need language access, and translate tools can help.",privacy|language_access
+131,admin,none,open,3,Let students use AI freely in class. I worry about student data being collected and shared with vendors. It is hard to know if submitted work is original work.,privacy|academic_integrity
+132,teacher,none,restricted,2,I would limit AI use to specific supervised activities only at best. There is no training time or grading time to manage AI use.,teacher_workload
+133,teacher,none,restricted,3,AI should be restricted in classrooms for now. There is no training time or grading time to manage AI use.,teacher_workload
+134,teacher,none,restricted,1,AI should be restricted in classrooms for now. Teachers already face a heavy workload and this adds extra work. Students could cheat by having AI write their essays.,teacher_workload|academic_integrity
+135,student,disability,open,4,I want AI tools allowed for learning. Assistive features could really help some students if the tools are accessible.,accessibility
+136,admin,none,constrained,1,Use AI for some tasks under teacher guidance. Assistive features could really help some students if the tools are accessible.,accessibility
+137,teacher,none,constrained,2,AI should be allowed with clear rules and disclosure. There is no training time or grading time to manage AI use.,teacher_workload
+138,parent,none,restricted,4,AI should be restricted in classrooms for now. Academic integrity is at risk and AI detectors seem unreliable.,academic_integrity
+139,student,disability,constrained,4,"AI should be allowed with clear rules and disclosure. Text-to-speech and captioning support must be available to every learner. Families need language access, and translate tools can help.",accessibility|language_access
+140,teacher,none,restricted,1,AI should be restricted in classrooms for now. It is hard to know if submitted work is original work. There is no training time or grading time to manage AI use.,academic_integrity|teacher_workload
+141,teacher,none,restricted,4,I would limit AI use to specific supervised activities only at best. It is hard to know if submitted work is original work. Rolling this out will overwhelm staff and cause burnout.,academic_integrity|teacher_workload
+142,admin,none,restricted,2,I would limit AI use to specific supervised activities only at best. Academic integrity is at risk and AI detectors seem unreliable.,academic_integrity
+143,teacher,none,restricted,1,AI should be restricted in classrooms for now. Teachers already face a heavy workload and this adds extra work. Academic integrity is at risk and AI detectors seem unreliable.,teacher_workload|academic_integrity
+144,teacher,none,restricted,1,I would limit AI use to specific supervised activities only at best. Teachers already face a heavy workload and this adds extra work.,teacher_workload
+145,teacher,none,restricted,4,AI should be restricted in classrooms for now. It is hard to know if submitted work is original work.,academic_integrity
+146,teacher,none,restricted,3,AI should be restricted in classrooms for now. Students could cheat by having AI write their essays. There is no training time or grading time to manage AI use.,academic_integrity|teacher_workload
+147,teacher,none,restricted,2,AI should be restricted in classrooms for now. Students could cheat by having AI write their essays.,academic_integrity
+148,teacher,none,constrained,2,AI should be allowed with clear rules and disclosure. Academic integrity is at risk and AI detectors seem unreliable. Rolling this out will overwhelm staff and cause burnout.,academic_integrity|teacher_workload
+149,student,none,restricted,2,I would limit AI use to specific supervised activities only at best. Assistive features could really help some students if the tools are accessible.,accessibility
+150,parent,none,open,3,I want AI tools allowed for learning. Text-to-speech and captioning support must be available to every learner.,accessibility
+151,admin,none,constrained,2,AI should be allowed with clear rules and disclosure. Rolling this out will overwhelm staff and cause burnout.,teacher_workload
+152,student,none,constrained,3,Use AI for some tasks under teacher guidance. Text-to-speech and captioning support must be available to every learner.,accessibility
+153,teacher,none,restricted,4,AI should be restricted in classrooms for now. Teachers already face a heavy workload and this adds extra work. It is hard to know if submitted work is original work.,teacher_workload|academic_integrity
+154,student,none,open,2,Let students use AI freely in class. Assistive features could really help some students if the tools are accessible.,accessibility
+155,parent,none,constrained,4,Use AI for some tasks under teacher guidance. I worry about student data being collected and shared with vendors.,privacy
+156,teacher,none,restricted,1,AI should be restricted in classrooms for now. It is hard to know if submitted work is original work. Rolling this out will overwhelm staff and cause burnout.,academic_integrity|teacher_workload
+157,parent,none,restricted,1,AI should be restricted in classrooms for now. Multilingual students could use translation to follow lessons. I worry about student data being collected and shared with vendors.,language_access|privacy
+158,parent,none,restricted,1,I would limit AI use to specific supervised activities only at best. I worry about student data being collected and shared with vendors.,privacy
+159,parent,none,open,2,I want AI tools allowed for learning. Academic integrity is at risk and AI detectors seem unreliable.,academic_integrity
+160,student,disability,constrained,5,AI should be allowed with clear rules and disclosure. Text-to-speech and captioning support must be available to every learner.,accessibility
+161,admin,none,restricted,3,AI should be restricted in classrooms for now. I worry about student data being collected and shared with vendors. Teachers already face a heavy workload and this adds extra work.,privacy|teacher_workload
+162,teacher,none,restricted,1,AI should be restricted in classrooms for now. There is no training time or grading time to manage AI use.,teacher_workload
+163,student,none,restricted,1,"AI should be restricted in classrooms for now. Families need language access, and translate tools can help.",language_access
+164,teacher,none,restricted,3,AI should be restricted in classrooms for now. Academic integrity is at risk and AI detectors seem unreliable.,academic_integrity
+165,teacher,none,restricted,4,I would limit AI use to specific supervised activities only at best. Rolling this out will overwhelm staff and cause burnout. Students could cheat by having AI write their essays.,teacher_workload|academic_integrity
+166,parent,none,restricted,1,I would limit AI use to specific supervised activities only at best. Nobody has explained the data collection behind these AI apps.,privacy
+167,parent,none,open,4,Let students use AI freely in class. Privacy of children's personal information needs strong protection.,privacy
+168,teacher,none,constrained,1,Use AI for some tasks under teacher guidance. Teachers already face a heavy workload and this adds extra work.,teacher_workload
+169,admin,none,constrained,2,Use AI for some tasks under teacher guidance. English learners face a language barrier that AI translation might ease. There is no training time or grading time to manage AI use.,language_access|teacher_workload
+170,teacher,none,restricted,1,I would limit AI use to specific supervised activities only at best. Students with disabilities need accessible tools that work with screen readers. There is no training time or grading time to manage AI use.,accessibility|teacher_workload
+171,teacher,none,constrained,4,Use AI for some tasks under teacher guidance. Students could cheat by having AI write their essays.,academic_integrity
+172,teacher,none,restricted,1,AI should be restricted in classrooms for now. Students with disabilities need accessible tools that work with screen readers.,accessibility
+173,admin,none,constrained,2,AI should be allowed with clear rules and disclosure. I worry about student data being collected and shared with vendors.,privacy
+174,student,none,open,1,I want AI tools allowed for learning. English learners face a language barrier that AI translation might ease.,language_access
+175,student,none,constrained,2,Use AI for some tasks under teacher guidance. I worry about student data being collected and shared with vendors. Text-to-speech and captioning support must be available to every learner.,privacy|accessibility
+176,teacher,none,restricted,1,I would limit AI use to specific supervised activities only at best. Teachers already face a heavy workload and this adds extra work. Academic integrity is at risk and AI detectors seem unreliable.,teacher_workload|academic_integrity
+177,admin,none,open,1,Let students use AI freely in class. It is hard to know if submitted work is original work.,academic_integrity
+178,admin,none,constrained,3,AI should be allowed with clear rules and disclosure. Privacy of children's personal information needs strong protection. Teachers already face a heavy workload and this adds extra work.,privacy|teacher_workload
+179,parent,none,restricted,3,AI should be restricted in classrooms for now. It is hard to know if submitted work is original work. Privacy of children's personal information needs strong protection.,academic_integrity|privacy
+180,admin,none,restricted,1,AI should be restricted in classrooms for now. Privacy of children's personal information needs strong protection. Students could cheat by having AI write their essays.,privacy|academic_integrity
+181,admin,none,constrained,4,Use AI for some tasks under teacher guidance. Privacy of children's personal information needs strong protection.,privacy
+182,teacher,none,restricted,2,I would limit AI use to specific supervised activities only at best. Nobody has explained the data collection behind these AI apps. Academic integrity is at risk and AI detectors seem unreliable.,privacy|academic_integrity
+183,teacher,none,restricted,3,AI should be restricted in classrooms for now. Multilingual students could use translation to follow lessons. Academic integrity is at risk and AI detectors seem unreliable.,language_access|academic_integrity
+184,parent,none,restricted,2,AI should be restricted in classrooms for now. Students could cheat by having AI write their essays.,academic_integrity
+185,parent,none,constrained,4,Use AI for some tasks under teacher guidance. Teachers already face a heavy workload and this adds extra work.,teacher_workload
+186,teacher,none,restricted,2,I would limit AI use to specific supervised activities only at best. It is hard to know if submitted work is original work.,academic_integrity
+187,student,none,restricted,4,AI should be restricted in classrooms for now. Assistive features could really help some students if the tools are accessible.,accessibility
+188,parent,none,restricted,1,I would limit AI use to specific supervised activities only at best. Academic integrity is at risk and AI detectors seem unreliable.,academic_integrity
+189,teacher,none,constrained,3,Use AI for some tasks under teacher guidance. Rolling this out will overwhelm staff and cause burnout. Academic integrity is at risk and AI detectors seem unreliable.,teacher_workload|academic_integrity
+190,admin,none,constrained,2,"Use AI for some tasks under teacher guidance. Families need language access, and translate tools can help.",language_access
+191,teacher,none,restricted,1,AI should be restricted in classrooms for now. It is hard to know if submitted work is original work. Privacy of children's personal information needs strong protection.,academic_integrity|privacy
+192,student,multilingual,open,5,Let students use AI freely in class. Multilingual students could use translation to follow lessons. It is hard to know if submitted work is original work.,language_access|academic_integrity
+193,parent,none,constrained,3,Use AI for some tasks under teacher guidance. Privacy of children's personal information needs strong protection.,privacy
+194,student,disability,constrained,5,Use AI for some tasks under teacher guidance. Assistive features could really help some students if the tools are accessible. English learners face a language barrier that AI translation might ease.,accessibility|language_access
+195,student,none,open,3,I want AI tools allowed for learning. Students with disabilities need accessible tools that work with screen readers. There is no training time or grading time to manage AI use.,accessibility|teacher_workload
+196,teacher,none,restricted,3,I would limit AI use to specific supervised activities only at best. Text-to-speech and captioning support must be available to every learner.,accessibility
+197,admin,none,restricted,1,AI should be restricted in classrooms for now. Text-to-speech and captioning support must be available to every learner.,accessibility
+198,student,none,constrained,1,Use AI for some tasks under teacher guidance. Academic integrity is at risk and AI detectors seem unreliable.,academic_integrity
+199,teacher,none,constrained,2,AI should be allowed with clear rules and disclosure. Teachers already face a heavy workload and this adds extra work.,teacher_workload
+200,parent,none,restricted,4,AI should be restricted in classrooms for now. Privacy of children's personal information needs strong protection.,privacy
+201,admin,none,open,3,Let students use AI freely in class. Nobody has explained the data collection behind these AI apps. There is no training time or grading time to manage AI use.,privacy|teacher_workload
+202,teacher,none,restricted,4,AI should be restricted in classrooms for now. Assistive features could really help some students if the tools are accessible. Teachers already face a heavy workload and this adds extra work.,accessibility|teacher_workload
+203,student,none,open,2,I want AI tools allowed for learning. Nobody has explained the data collection behind these AI apps.,privacy
+204,student,multilingual,open,4,Let students use AI freely in class. English learners face a language barrier that AI translation might ease. I worry about student data being collected and shared with vendors.,language_access|privacy
+205,teacher,none,restricted,2,AI should be restricted in classrooms for now. There is no training time or grading time to manage AI use. It is hard to know if submitted work is original work.,teacher_workload|academic_integrity
+206,student,none,constrained,3,Use AI for some tasks under teacher guidance. Assistive features could really help some students if the tools are accessible.,accessibility
+207,parent,none,restricted,3,I would limit AI use to specific supervised activities only at best. Assistive features could really help some students if the tools are accessible. Nobody has explained the data collection behind these AI apps.,accessibility|privacy
+208,student,none,constrained,1,Use AI for some tasks under teacher guidance. There is no training time or grading time to manage AI use. I worry about student data being collected and shared with vendors.,teacher_workload|privacy
+209,teacher,none,constrained,4,Use AI for some tasks under teacher guidance. There is no training time or grading time to manage AI use. Students could cheat by having AI write their essays.,teacher_workload|academic_integrity
+210,parent,none,restricted,1,AI should be restricted in classrooms for now. Privacy of children's personal information needs strong protection.,privacy
+211,teacher,none,constrained,3,AI should be allowed with clear rules and disclosure. Students could cheat by having AI write their essays.,academic_integrity
+212,student,none,open,2,I want AI tools allowed for learning. Students could cheat by having AI write their essays. Assistive features could really help some students if the tools are accessible.,academic_integrity|accessibility
+213,parent,none,restricted,2,AI should be restricted in classrooms for now. Nobody has explained the data collection behind these AI apps.,privacy
+214,parent,none,restricted,4,I would limit AI use to specific supervised activities only at best. I worry about student data being collected and shared with vendors. Academic integrity is at risk and AI detectors seem unreliable.,privacy|academic_integrity
+215,parent,none,constrained,4,AI should be allowed with clear rules and disclosure. Privacy of children's personal information needs strong protection.,privacy
+216,student,multilingual,open,5,I want AI tools allowed for learning. Academic integrity is at risk and AI detectors seem unreliable. Multilingual students could use translation to follow lessons.,academic_integrity|language_access
+217,student,disability,open,3,I want AI tools allowed for learning. Students with disabilities need accessible tools that work with screen readers.,accessibility
+218,admin,none,constrained,4,"Use AI for some tasks under teacher guidance. Families need language access, and translate tools can help.",language_access
+219,teacher,none,restricted,2,AI should be restricted in classrooms for now. Rolling this out will overwhelm staff and cause burnout.,teacher_workload
+220,teacher,none,restricted,3,I would limit AI use to specific supervised activities only at best. English learners face a language barrier that AI translation might ease. I worry about student data being collected and shared with vendors.,language_access|privacy
+221,teacher,none,restricted,2,AI should be restricted in classrooms for now. Rolling this out will overwhelm staff and cause burnout. Students could cheat by having AI write their essays.,teacher_workload|academic_integrity
+222,parent,none,constrained,2,Use AI for some tasks under teacher guidance. I worry about student data being collected and shared with vendors. Students could cheat by having AI write their essays.,privacy|academic_integrity
+223,admin,none,restricted,1,I would limit AI use to specific supervised activities only at best. There is no training time or grading time to manage AI use.,teacher_workload
+224,teacher,none,restricted,2,AI should be restricted in classrooms for now. Students could cheat by having AI write their essays. Nobody has explained the data collection behind these AI apps.,academic_integrity|privacy
+225,admin,none,open,4,Let students use AI freely in class. English learners face a language barrier that AI translation might ease. Students with disabilities need accessible tools that work with screen readers.,language_access|accessibility
+226,student,none,constrained,2,Use AI for some tasks under teacher guidance. English learners face a language barrier that AI translation might ease. Text-to-speech and captioning support must be available to every learner.,language_access|accessibility
+227,teacher,none,restricted,4,I would limit AI use to specific supervised activities only at best. Nobody has explained the data collection behind these AI apps.,privacy
+228,parent,none,constrained,1,Use AI for some tasks under teacher guidance. Text-to-speech and captioning support must be available to every learner.,accessibility
+229,student,disability,open,3,Let students use AI freely in class. English learners face a language barrier that AI translation might ease. There is no training time or grading time to manage AI use.,language_access|teacher_workload
+230,student,none,constrained,1,AI should be allowed with clear rules and disclosure. Students could cheat by having AI write their essays.,academic_integrity
+231,teacher,none,restricted,2,AI should be restricted in classrooms for now. Students with disabilities need accessible tools that work with screen readers. There is no training time or grading time to manage AI use.,accessibility|teacher_workload
+232,admin,none,constrained,1,Use AI for some tasks under teacher guidance. It is hard to know if submitted work is original work.,academic_integrity
+233,teacher,none,restricted,1,AI should be restricted in classrooms for now. Students could cheat by having AI write their essays. Rolling this out will overwhelm staff and cause burnout.,academic_integrity|teacher_workload
+234,admin,none,restricted,4,"I would limit AI use to specific supervised activities only at best. Families need language access, and translate tools can help.",language_access
+235,parent,none,constrained,1,Use AI for some tasks under teacher guidance. It is hard to know if submitted work is original work. I worry about student data being collected and shared with vendors.,academic_integrity|privacy
+236,teacher,none,restricted,1,I would limit AI use to specific supervised activities only at best. Text-to-speech and captioning support must be available to every learner. There is no training time or grading time to manage AI use.,accessibility|teacher_workload
+237,parent,none,restricted,4,I would limit AI use to specific supervised activities only at best. Teachers already face a heavy workload and this adds extra work. Nobody has explained the data collection behind these AI apps.,teacher_workload|privacy
+238,student,none,restricted,3,I would limit AI use to specific supervised activities only at best. It is hard to know if submitted work is original work.,academic_integrity
+239,student,none,constrained,3,"Use AI for some tasks under teacher guidance. Families need language access, and translate tools can help. Students with disabilities need accessible tools that work with screen readers.",language_access|accessibility
+240,parent,none,constrained,1,Use AI for some tasks under teacher guidance. Privacy of children's personal information needs strong protection. Text-to-speech and captioning support must be available to every learner.,privacy|accessibility
+241,parent,none,restricted,1,I would limit AI use to specific supervised activities only at best. Nobody has explained the data collection behind these AI apps.,privacy
+242,teacher,none,restricted,2,AI should be restricted in classrooms for now. Students could cheat by having AI write their essays. Nobody has explained the data collection behind these AI apps.,academic_integrity|privacy
+243,teacher,none,restricted,1,I would limit AI use to specific supervised activities only at best. Privacy of children's personal information needs strong protection. Multilingual students could use translation to follow lessons.,privacy|language_access
+244,parent,none,open,4,I want AI tools allowed for learning. Privacy of children's personal information needs strong protection.,privacy
+245,admin,none,constrained,2,AI should be allowed with clear rules and disclosure. Privacy of children's personal information needs strong protection.,privacy
+246,parent,none,restricted,2,I would limit AI use to specific supervised activities only at best. I worry about student data being collected and shared with vendors.,privacy
+247,teacher,none,restricted,1,AI should be restricted in classrooms for now. It is hard to know if submitted work is original work. Teachers already face a heavy workload and this adds extra work.,academic_integrity|teacher_workload
+248,teacher,none,restricted,1,AI should be restricted in classrooms for now. Nobody has explained the data collection behind these AI apps. Rolling this out will overwhelm staff and cause burnout.,privacy|teacher_workload
+249,teacher,none,restricted,2,I would limit AI use to specific supervised activities only at best. Privacy of children's personal information needs strong protection. It is hard to know if submitted work is original work.,privacy|academic_integrity
+250,parent,none,restricted,3,AI should be restricted in classrooms for now. Academic integrity is at risk and AI detectors seem unreliable. I worry about student data being collected and shared with vendors.,academic_integrity|privacy
+251,admin,none,open,4,I want AI tools allowed for learning. Teachers already face a heavy workload and this adds extra work. Nobody has explained the data collection behind these AI apps.,teacher_workload|privacy
+252,teacher,none,restricted,1,"I would limit AI use to specific supervised activities only at best. Assistive features could really help some students if the tools are accessible. Families need language access, and translate tools can help.",accessibility|language_access
+253,teacher,none,restricted,3,I would limit AI use to specific supervised activities only at best. Rolling this out will overwhelm staff and cause burnout. Academic integrity is at risk and AI detectors seem unreliable.,teacher_workload|academic_integrity
+254,teacher,none,restricted,1,I would limit AI use to specific supervised activities only at best. Academic integrity is at risk and AI detectors seem unreliable. Nobody has explained the data collection behind these AI apps.,academic_integrity|privacy
+255,parent,none,restricted,3,I would limit AI use to specific supervised activities only at best. I worry about student data being collected and shared with vendors.,privacy
+256,parent,none,restricted,1,AI should be restricted in classrooms for now. I worry about student data being collected and shared with vendors.,privacy
+257,student,none,constrained,3,AI should be allowed with clear rules and disclosure. English learners face a language barrier that AI translation might ease.,language_access
+258,student,multilingual,open,4,I want AI tools allowed for learning. Students with disabilities need accessible tools that work with screen readers.,accessibility
+259,teacher,none,restricted,2,I would limit AI use to specific supervised activities only at best. Rolling this out will overwhelm staff and cause burnout.,teacher_workload
+260,student,none,open,3,Let students use AI freely in class. Assistive features could really help some students if the tools are accessible.,accessibility
+261,parent,none,open,3,Let students use AI freely in class. Privacy of children's personal information needs strong protection. Assistive features could really help some students if the tools are accessible.,privacy|accessibility
+262,teacher,none,constrained,1,AI should be allowed with clear rules and disclosure. It is hard to know if submitted work is original work. There is no training time or grading time to manage AI use.,academic_integrity|teacher_workload
+263,student,disability,constrained,4,Use AI for some tasks under teacher guidance. Academic integrity is at risk and AI detectors seem unreliable. Students with disabilities need accessible tools that work with screen readers.,academic_integrity|accessibility
+264,admin,none,constrained,3,AI should be allowed with clear rules and disclosure. Students could cheat by having AI write their essays.,academic_integrity
+265,student,none,open,4,Let students use AI freely in class. Academic integrity is at risk and AI detectors seem unreliable.,academic_integrity
+266,teacher,none,constrained,2,Use AI for some tasks under teacher guidance. There is no training time or grading time to manage AI use. Students could cheat by having AI write their essays.,teacher_workload|academic_integrity
+267,student,none,constrained,2,Use AI for some tasks under teacher guidance. Multilingual students could use translation to follow lessons.,language_access
+268,student,none,open,2,Let students use AI freely in class. Students with disabilities need accessible tools that work with screen readers.,accessibility
+269,student,multilingual,constrained,5,"Use AI for some tasks under teacher guidance. Families need language access, and translate tools can help.",language_access
+270,student,multilingual,open,3,Let students use AI freely in class. Privacy of children's personal information needs strong protection. Multilingual students could use translation to follow lessons.,privacy|language_access
+271,student,none,restricted,1,AI should be restricted in classrooms for now. I worry about student data being collected and shared with vendors.,privacy
+272,student,none,open,1,I want AI tools allowed for learning. English learners face a language barrier that AI translation might ease.,language_access
+273,teacher,none,restricted,3,AI should be restricted in classrooms for now. It is hard to know if submitted work is original work.,academic_integrity
+274,parent,none,restricted,4,I would limit AI use to specific supervised activities only at best. Nobody has explained the data collection behind these AI apps. Academic integrity is at risk and AI detectors seem unreliable.,privacy|academic_integrity
+275,teacher,none,constrained,3,AI should be allowed with clear rules and disclosure. It is hard to know if submitted work is original work. Teachers already face a heavy workload and this adds extra work.,academic_integrity|teacher_workload
+276,teacher,none,constrained,2,AI should be allowed with clear rules and disclosure. Rolling this out will overwhelm staff and cause burnout. Academic integrity is at risk and AI detectors seem unreliable.,teacher_workload|academic_integrity
+277,teacher,none,restricted,2,I would limit AI use to specific supervised activities only at best. It is hard to know if submitted work is original work. Rolling this out will overwhelm staff and cause burnout.,academic_integrity|teacher_workload
+278,admin,none,constrained,4,Use AI for some tasks under teacher guidance. Multilingual students could use translation to follow lessons.,language_access
+279,admin,none,constrained,3,AI should be allowed with clear rules and disclosure. Students could cheat by having AI write their essays. Privacy of children's personal information needs strong protection.,academic_integrity|privacy
+280,student,none,open,2,I want AI tools allowed for learning. Privacy of children's personal information needs strong protection.,privacy
+281,student,none,restricted,2,AI should be restricted in classrooms for now. Multilingual students could use translation to follow lessons.,language_access
+282,teacher,none,constrained,2,Use AI for some tasks under teacher guidance. Teachers already face a heavy workload and this adds extra work.,teacher_workload
+283,teacher,none,restricted,4,I would limit AI use to specific supervised activities only at best. Teachers already face a heavy workload and this adds extra work.,teacher_workload
+284,teacher,none,restricted,4,AI should be restricted in classrooms for now. Academic integrity is at risk and AI detectors seem unreliable. There is no training time or grading time to manage AI use.,academic_integrity|teacher_workload
+285,teacher,none,constrained,1,AI should be allowed with clear rules and disclosure. It is hard to know if submitted work is original work. Rolling this out will overwhelm staff and cause burnout.,academic_integrity|teacher_workload
+286,student,none,open,1,Let students use AI freely in class. Privacy of children's personal information needs strong protection.,privacy
+287,teacher,none,restricted,4,AI should be restricted in classrooms for now. Rolling this out will overwhelm staff and cause burnout.,teacher_workload
+288,teacher,none,restricted,2,I would limit AI use to specific supervised activities only at best. Students could cheat by having AI write their essays. There is no training time or grading time to manage AI use.,academic_integrity|teacher_workload
+289,student,multilingual,open,5,"I want AI tools allowed for learning. Families need language access, and translate tools can help.",language_access
+290,parent,none,restricted,2,I would limit AI use to specific supervised activities only at best. Nobody has explained the data collection behind these AI apps. Assistive features could really help some students if the tools are accessible.,privacy|accessibility
+291,student,none,open,3,Let students use AI freely in class. Privacy of children's personal information needs strong protection.,privacy
+292,admin,none,open,2,I want AI tools allowed for learning. Rolling this out will overwhelm staff and cause burnout.,teacher_workload
+293,student,none,open,1,Let students use AI freely in class. Multilingual students could use translation to follow lessons.,language_access
+294,parent,none,constrained,2,Use AI for some tasks under teacher guidance. Nobody has explained the data collection behind these AI apps.,privacy
+295,admin,none,constrained,4,AI should be allowed with clear rules and disclosure. Text-to-speech and captioning support must be available to every learner.,accessibility
+296,admin,none,open,3,I want AI tools allowed for learning. Multilingual students could use translation to follow lessons.,language_access
+297,parent,none,restricted,4,AI should be restricted in classrooms for now. Teachers already face a heavy workload and this adds extra work. Academic integrity is at risk and AI detectors seem unreliable.,teacher_workload|academic_integrity
+298,parent,none,constrained,1,Use AI for some tasks under teacher guidance. Nobody has explained the data collection behind these AI apps.,privacy
+299,parent,none,constrained,4,Use AI for some tasks under teacher guidance. Text-to-speech and captioning support must be available to every learner.,accessibility

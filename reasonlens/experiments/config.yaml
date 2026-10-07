@@ -1,0 +1,39 @@
+# ReasonLens experiment configuration
+# Used by experiments/run_all.py for the simulation-mode pipeline.
+
+experiment_id: default_experiment
+mode: simulation        # "simulation" or "pilot"
+seed: 42
+
+simulation:
+  n_participants: 2000
+  # Behavioral model ground truth used only to generate synthetic data.
+  # Real pilot data replaces this entirely; these numbers are never used
+  # by the analysis code, only by experiments/simulation.py.
+  base_grant_rate: 0.55
+  base_precise_rate: 0.45
+  reason_type_grant_effect:
+    none: -0.18
+    vague: -0.08
+    advertising: -0.12
+    functional: 0.10
+    privacy_preserving: 0.20
+  app_type_grant_effect:
+    rideshare: 0.15
+    food_delivery: 0.10
+    local_news: -0.05
+    wallpaper: -0.20
+  reason_type_trust_effect:
+    none: -0.6
+    vague: -0.3
+    advertising: -0.4
+    functional: 0.3
+    privacy_preserving: 0.7
+  response_time_ms_mean: 3200
+  response_time_ms_sd: 900
+
+output:
+  synthetic_dir: data/synthetic
+  processed_dir: data/processed
+  results_dir: data/results
+  figures_dir: data/results/figures

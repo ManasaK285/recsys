@@ -1,0 +1,18 @@
+{"instruction": "I need to get my money back for a purchase I no longer want.", "label": "refund_request"}
+{"instruction": "My card payment was declined at checkout.", "label": "payment_failed"}
+{"instruction": "I cannot sign in because my account is locked.", "label": "account_locked"}
+{"instruction": "My package is overdue and the tracking has not updated.", "label": "shipping_delay"}
+{"instruction": "I received a different product from the one I ordered.", "label": "wrong_item"}
+{"instruction": "Please cancel my recurring subscription before it renews.", "label": "subscription_cancel"}
+{"instruction": "How do I request a refund for my recent order?", "label": "refund_request"}
+{"instruction": "The website rejected my payment twice.", "label": "payment_failed"}
+{"instruction": "Too many login attempts locked my account.", "label": "account_locked"}
+{"instruction": "The delivery date passed but my shipment has not arrived.", "label": "shipping_delay"}
+{"instruction": "The box contains the wrong item.", "label": "wrong_item"}
+{"instruction": "I want to stop my membership from renewing.", "label": "subscription_cancel"}
+{"instruction": "I returned the product and want the charge refunded.", "label": "refund_request"}
+{"instruction": "Checkout will not accept my payment method.", "label": "payment_failed"}
+{"instruction": "I am blocked from accessing my account.", "label": "account_locked"}
+{"instruction": "Why is my delivery delayed?", "label": "shipping_delay"}
+{"instruction": "The item delivered does not match my order.", "label": "wrong_item"}
+{"instruction": "Please terminate my subscription.", "label": "subscription_cancel"}

@@ -1,0 +1,5 @@
+group,current_share,baseline_winner,flips,threshold_share,new_winner,change_pp
+parent,0.25333333333333335,restricted,False,,,
+teacher,0.37666666666666665,restricted,True,0.145,constrained,-23.2
+admin,0.13,restricted,True,0.325,constrained,19.5
+student,0.24,restricted,True,0.505,open,26.5

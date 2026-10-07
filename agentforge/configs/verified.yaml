@@ -1,0 +1,4 @@
+name: verified
+parallel_agents: 1
+verification: true
+meta_debugging: false
