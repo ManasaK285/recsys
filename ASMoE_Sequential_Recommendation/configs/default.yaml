@@ -1,0 +1,25 @@
+seed: 42
+num_users: 800
+num_items: 500
+num_categories: 20
+min_interactions: 18
+max_interactions: 32
+max_len: 20
+embedding_dim: 64
+num_heads: 4
+num_layers: 2
+dropout: 0.10
+num_experts: 6
+top_k: 2
+batch_size: 128
+lr: 0.001
+weight_decay: 0.0001
+stage1_epochs: 8
+stage2_epochs: 6
+mask_probability: 0.30
+similarity_weight: 0.15
+mask_loss_weight: 0.75
+balance_weight: 0.02
+min_item_frequency: 1
+device: auto
+eval_ks: [5, 10, 20]

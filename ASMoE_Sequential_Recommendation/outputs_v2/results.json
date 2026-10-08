@@ -1,0 +1,69 @@
+{
+  "popularity": {
+    "Recall@5": 0.02,
+    "Recall@10": 0.04375,
+    "Recall@20": 0.0875,
+    "NDCG@5": 0.012517743009460817,
+    "NDCG@10": 0.02006919832983703,
+    "NDCG@20": 0.03103969679212497,
+    "MRR": 0.02390070814800998
+  },
+  "sasrec": {
+    "Recall@5": 0.09625,
+    "Recall@10": 0.13875,
+    "Recall@20": 0.2275,
+    "NDCG@5": 0.060999747972943545,
+    "NDCG@10": 0.0744755287043325,
+    "NDCG@20": 0.09655785239110537,
+    "MRR": 0.06880260960741069
+  },
+  "asmoe_stage1": {
+    "Recall@5": 0.13125,
+    "Recall@10": 0.2075,
+    "Recall@20": 0.27875,
+    "NDCG@5": 0.08663375016773371,
+    "NDCG@10": 0.11138412885150001,
+    "NDCG@20": 0.12941651262064638,
+    "MRR": 0.09483746423344491
+  },
+  "asmoe_stage2": {
+    "Recall@5": 0.13375,
+    "Recall@10": 0.20875,
+    "Recall@20": 0.28375,
+    "NDCG@5": 0.08530877205529923,
+    "NDCG@10": 0.1093639902123743,
+    "NDCG@20": 0.12813019488736302,
+    "MRR": 0.09211818341959453
+  },
+  "config": {
+    "seed": 42,
+    "num_users": 800,
+    "num_items": 500,
+    "num_categories": 20,
+    "min_interactions": 18,
+    "max_interactions": 32,
+    "max_len": 20,
+    "embedding_dim": 64,
+    "num_heads": 4,
+    "num_layers": 2,
+    "dropout": 0.1,
+    "num_experts": 6,
+    "top_k": 2,
+    "batch_size": 128,
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "stage1_epochs": 8,
+    "stage2_epochs": 6,
+    "mask_probability": 0.3,
+    "similarity_weight": 0.15,
+    "mask_loss_weight": 0.75,
+    "balance_weight": 0.02,
+    "min_item_frequency": 1,
+    "device": "auto",
+    "eval_ks": [
+      5,
+      10,
+      20
+    ]
+  }
+}
