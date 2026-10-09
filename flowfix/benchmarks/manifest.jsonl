@@ -1,0 +1,4 @@
+{"case_id":"average_off_by_one","type":"logic"}
+{"case_id":"empty_list","type":"edge_case"}
+{"case_id":"discount_boundary","type":"boundary"}
+{"case_id":"safe_division","type":"api_behavior"}
