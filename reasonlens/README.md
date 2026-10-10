@@ -1,6 +1,6 @@
 # ReasonLens
 
-A research platform studying how the *reason given* for a mobile
+A research platform studying how the *reason given* for a mobile 
 location-permission request affects whether users grant it, what
 precision level they choose, and how much they trust the app and
 Android afterward — plus a secondary ML question: does a text-derived
