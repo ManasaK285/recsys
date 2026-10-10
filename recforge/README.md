@@ -4,7 +4,7 @@
 
 RecForge is an end-to-end recommendation research project that combines classical retrieval, semantic retrieval, context engineering, reward-aware ranking, and a catalog-aware neural ranker into a single recommendation pipeline.
 
-The project is designed to reproduce and explore several of the ideas discussed in the GenRec paper using the **MovieLens** dataset as a reproducible research environment.
+The project is designed to reproduce and explore several of the ideas discussed in the GenRec paper using the **MovieLens** dataset as a reproducible research environment. 
 
 ---
 
