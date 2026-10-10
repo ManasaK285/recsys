@@ -3,7 +3,7 @@
 ### Industrial Agentic Engineering Harness for Autonomous Software Development
 
 > **Don't debug the code. Debug the agent.**
-
+ 
 AgentForge is an experimental **agentic software engineering harness** for orchestrating, verifying, evaluating, and improving autonomous coding workflows.
 
 Instead of treating an LLM as a code autocomplete system, AgentForge treats software development as a sequence of **agent trajectories** operating inside a controlled **harness** with planning, repository analysis, parallel implementation, verification, evaluation, observability, and meta-debugging.
