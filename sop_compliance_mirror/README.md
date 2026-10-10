@@ -1,6 +1,5 @@
 # SOP Compliance Mirror
 Insurance Claims SOP-Guided Conversational Agent
-
 ---
 
 ## Setup
