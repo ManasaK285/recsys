@@ -5,7 +5,7 @@
 Inspired by the question posed in the paper *"Who Controls the Curriculum for AI?"* (see [References](#references)).
 
 > **Data notice:** the bundled dataset is **synthetic** (simulated people). Results in this README demonstrate the *method*, not real stakeholder opinion. Population shares and policy-exposure values are editable **assumptions**.
-
+ 
 ---
 
 ## Table of contents
