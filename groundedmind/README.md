@@ -1,5 +1,5 @@
 # GroundedMind
-
+ 
 Statistical Evaluation of Embodied vs. Statistical Concept Learning in Multimodal AI.
 
 This repository is a runnable research prototype inspired by work comparing human and LLM sensory associations. It includes:
