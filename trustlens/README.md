@@ -5,7 +5,7 @@
 TrustLens is a controlled research pipeline investigating how machine-learning models distinguish AI-generated from human-generated responses and how sensitive that detection is to synthetic linguistic artifacts.
 
 The project focuses on an important methodological question:
-
+ 
 > **When a classifier achieves high AI-vs-human source-detection performance on synthetic data, how much of that performance reflects genuine source-related signal versus artifacts introduced by the data-generation process?**
 
 The pipeline evaluates source detection, agreement prediction, humanization, feature ablation, scenario generalization, style-template generalization, style neutralization, and source-signal ablation.
