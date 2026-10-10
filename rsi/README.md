@@ -4,7 +4,7 @@ A research-oriented, end-to-end prototype inspired by recursive self-improving e
 - LLM-style candidate generation (with deterministic fallback)
 - sandboxed candidate evaluation
 - discovery tree
-- replay worlds
+- replay worlds 
 - offline policy evaluation ("dreaming")
 - recursive policy improvement
 - FastAPI API
