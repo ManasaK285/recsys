@@ -1,7 +1,7 @@
 # SwarmGuard v2 — Research Notes
 
 ## 1. Research Question
-
+ 
 This study investigates how governance mechanisms influence exploit propagation, detection, containment, and availability in a multi-agent system operating under evaluator vulnerability.
 
 The primary research question is:
