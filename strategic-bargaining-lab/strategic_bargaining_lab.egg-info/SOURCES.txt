@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+bargaining_lab/__init__.py
+bargaining_lab/api.py
+bargaining_lab/experiment.py
+bargaining_lab/simulation.py
+strategic_bargaining_lab.egg-info/PKG-INFO
+strategic_bargaining_lab.egg-info/SOURCES.txt
+strategic_bargaining_lab.egg-info/dependency_links.txt
+strategic_bargaining_lab.egg-info/requires.txt
+strategic_bargaining_lab.egg-info/top_level.txt
+tests/test_simulation.py
