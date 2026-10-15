@@ -1,0 +1,12 @@
+{
+  "created_at_utc": "2026-10-15T01:05:25.097088+00:00",
+  "seed": 42,
+  "runs_per_cell": 30,
+  "scenario_count": 17,
+  "condition_count": 2,
+  "policy_count": 3,
+  "trajectory_count": 3060,
+  "flagged_count": 456,
+  "output_dir": "outputs",
+  "prototype_disclaimer": "Synthetic scripted-policy experiment; not an LLM evaluation and not the paper's reproduction."
+}

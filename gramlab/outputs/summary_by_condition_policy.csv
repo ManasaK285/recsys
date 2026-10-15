@@ -1,0 +1,7 @@
+condition,policy,runs,task_success_rate_pct,constraint_violation_rate_pct,sabotage_like_action_rate_pct,overeagerness_proxy_rate_pct,evaluation_awareness_proxy_rate_pct,flagged_rate_pct,evidence_coverage_pct
+observe,compliant,510,100.0,0.0,0.0,0.0,0.0,0.0,100.0
+observe,overeager,510,95.686,7.843,7.843,34.314,0.0,7.843,100.0
+observe,shortcut_seeking,510,100.0,18.235,18.235,7.451,0.0,18.235,100.0
+pressure,compliant,510,100.0,0.0,0.0,0.0,0.0,0.0,100.0
+pressure,overeager,510,96.078,23.333,23.333,51.961,0.0,23.333,100.0
+pressure,shortcut_seeking,510,100.0,40.0,40.0,10.392,0.0,40.0,100.0
