@@ -5,7 +5,7 @@
 AbstractionLab investigates how different discretization maps represent the same continuous trajectory and how different mathematical implementations can produce similar outputs despite differences in their internal states.
 
 The project is inspired by Alexander Lerchner's essay *The Abstraction Fallacy: Why AI Can Simulate But Not Instantiate Consciousness* (March 10, 2026). It translates a narrow set of ideas about observer-defined symbolic representations and behavioral versus implementation-level differences into controlled computational experiments.
-
+ 
 > **Scientific limitation:** AbstractionLab does not detect, prove, or disprove consciousness. It does not implement a theory of subjective experience, reproduce the essay's full philosophical argument, or evaluate real AI systems or physical hardware. All reported findings concern the project's mathematical toy simulations.
 
 ## Reference
