@@ -1,173 +1,569 @@
 # OptiSimplicity Lab
 
-**A research-inspired experimental sandbox for studying algorithmic simplicity, optimization, and the coincidence of extrema in finite search spaces.**
+**A Reproducible Experimental Study of Simplicity, Combinatorial Optimization, Search Strategies, and Coincidence of Extrema**
 
-OptiSimplicity Lab investigates how different search strategies perform on small binary optimization problems, whether simpler candidate representations are associated with better objective values, and how often independently defined objectives share the same optimal candidates.
+OptiSimplicity Lab is a Python research project inspired by Dingle and Hutter, *Simplicity and Complexity in Combinatorial Optimization*, published in *Entropy* 28(2):226 (2026).
 
-The project uses a finite binary search space, compressed representation length as a proxy for description complexity, multiple search algorithms, and a randomized null model for comparing optima.
+The project implements three computational experiments to investigate relationships between compressed description length, objective-function optimality, search performance, and overlap between optimal sets.
 
-> **Research prototype:** This is a synthetic computational study, not a proof of a general principle about algorithmic information theory or universal search.
+The experiments use exactly enumerable binary search spaces, deterministic random seeds, fixed evaluation budgets, and CSV-based result exports. The implementation is intended as a reproducible experimental laboratory rather than a reproduction of every theoretical or empirical result in the original paper.
+
+---
+
+## Table of Contents
+
+- [Research Motivation](#research-motivation)
+- [Research Questions](#research-questions)
+- [Project Features](#project-features)
+- [Repository Structure](#repository-structure)
+- [Installation](#installation)
+- [Running the Experiments](#running-the-experiments)
+- [Experimental Design](#experimental-design)
+- [Experiment A: Complexity of Optima](#experiment-a-complexity-of-optima)
+- [Experiment B: Search Benchmark](#experiment-b-search-benchmark)
+- [Experiment C: Coincidence of Extrema](#experiment-c-coincidence-of-extrema)
+- [Observed Results](#observed-results)
+- [Scientific Interpretation](#scientific-interpretation)
+- [Testing and Validation](#testing-and-validation)
+- [Reproducibility](#reproducibility)
+- [Limitations](#limitations)
+- [Future Work](#future-work)
+- [Reference](#reference)
+
+---
+
+## Research Motivation
+
+Combinatorial optimization involves finding high-quality solutions within a finite or extremely large set of possible candidates.
+
+A natural question is whether simple, compressible solutions are more likely to be optimal or easier to discover through search.
+
+This project investigates that question from three complementary perspectives:
+
+1. **Description length:** Are optimal candidates more compressible than typical candidates?
+2. **Search behavior:** How do different search strategies perform under a common objective-evaluation budget?
+3. **Coincidence of extrema:** How often do different objectives share optimal candidates, and how does observed overlap compare with a randomized baseline?
+
+These questions are related but distinct. A compressible candidate is not necessarily optimal, and a search algorithm that finds simple candidates does not necessarily outperform other algorithms.
+
+The project makes these distinctions explicit through separate experiments and exported artifacts.
 
 ## Research Questions
 
-1. **Complexity of optima:** Do optimal solutions have shorter compressed representations than typical candidates?
-2. **Search performance:** How do uniform random search, simplicity-biased sampling, hill climbing, and simulated annealing compare under a fixed evaluation budget?
-3. **Coincidence of extrema:** Do different objective functions share optimal candidates more frequently than expected under an independently shuffled-score baseline?
+**RQ1 — Complexity of optima**
 
-## Experimental Setup
+How does the compressed description length of globally optimal candidates compare with the description length of the full candidate population?
 
-| Parameter                             | Configuration    |
-| ------------------------------------- | ---------------- |
-| Binary representation                 | 10 bits          |
-| Candidate search space                | 1,024 candidates |
-| Random seeds per search family        | 5                |
-| Evaluation budget per search run      | 250              |
-| Simplicity-bias parameter, β          | 0.25             |
-| Extrema pairs                         | 30               |
-| Null samples per extrema pair         | 200              |
-| Random seed for complexity experiment | 42               |
+**RQ2 — Search performance**
 
-The search benchmark evaluates four objective families:
+How do uniform random sampling, simplicity-biased sampling, hill climbing, and simulated annealing compare in solution quality, optimality gap, optimum discovery rate, candidate coverage, and runtime?
 
-* **Ones:** Rewards candidates with more set bits.
-* **Target similarity:** Rewards candidates that match a seeded binary target.
-* **Structured blocks:** Rewards agreement with a repeating binary pattern, with an additional adjacency bonus.
-* **Random table:** Assigns seeded random objective scores to candidates.
+**RQ3 — Coincidence of extrema**
 
-## Methods
+Do different objective functions share optimal candidates, and how does their observed optimal-set overlap compare with a null model that independently shuffles score assignments?
 
-### 1. Complexity of Optima
+---
 
-The project estimates candidate description length using zlib-compressed representations. It compares the compressed length of each objective's optimum with the distribution of compressed lengths across the full candidate population.
+## Project Features
 
-The resulting measure is a practical compression-based proxy, not Kolmogorov complexity. Experiment A uses seed 42 for the objective instances.
+- Exact enumeration of binary candidate spaces up to 16 bits.
+- Four synthetic objective families.
+- Zlib-based compressed description-length measurements.
+- Four search algorithms evaluated under fixed budgets.
+- Multiple seeded search runs.
+- Optimality-gap and optimum-discovery tracking.
+- Pairwise optimal-set overlap analysis.
+- Score-permutation null model preserving objective score multisets.
+- CSV outputs suitable for pandas, Excel, and further statistical analysis.
+- JSON experiment configuration summary.
+- Command-line interface and automated tests.
 
-### 2. Search Algorithm Benchmark
+---
 
-Four strategies are compared:
+## Repository Structure
 
-* **Uniform random search:** Samples candidates uniformly from the search space.
-* **Simplicity-biased search:** Samples candidates with probabilities weighted toward shorter compressed representations.
-* **Hill climbing:** Explores bit-flip neighbors and retains improvements.
-* **Simulated annealing:** Uses a temperature-controlled local search that can accept some non-improving moves.
+```text
+optisimplicity-lab/
+├── optisimplicity/
+│   ├── __init__.py
+│   ├── complexity.py
+│   ├── encoding.py
+│   ├── problems.py
+│   ├── search.py
+│   └── experiments/
+│       ├── __init__.py
+│       └── run_all.py
+├── tests/
+├── outputs/
+│   ├── complexity_optima.csv
+│   ├── search_runs.csv
+│   ├── search_curves.csv
+│   ├── search_aggregates.csv
+│   ├── extrema_pairs.csv
+│   ├── extrema_null_samples.csv
+│   └── summary.json
+├── README.md
+└── requirements.txt
+```
 
-Each search run uses a budget of 250 evaluations. Search experiments use seeds 0–4 to construct objective instances, with separate seeds for the search procedures. Performance is summarized across runs.
+The experiment runner is implemented in `optisimplicity/experiments/run_all.py`. The extrema experiment is defined inside that module; it does not require a separate `extrema.py` file.
 
-The reported optimality gap is computed against the exact optimum of the specific objective instance used in that run. Therefore, the seed-42 optimum in the complexity experiment should not be treated as the reference optimum for every search run.
+---
 
-### 3. Coincidence of Extrema
+## Installation
 
-The experiment compares optimal-candidate sets for pairs of objective families using set overlap and Jaccard similarity.
+Requirements:
 
-For the null baseline, each objective's score array is independently shuffled. This preserves its score distribution and tie counts while breaking the original association between candidate identity and score. The experiment then compares the observed overlap with overlap under these shuffled assignments.
+- Python 3.10 or newer, subject to compatibility with the pinned dependencies.
+- NumPy
+- pandas
+- pytest for testing
 
-This is one specific null model, not a universal test of whether objective optima coincide by chance.
+From PowerShell, navigate to the project directory:
 
-## Results
+```powershell
+cd "C:\Users\Manasa\Desktop\MK\Personal\mk\Google2\G2\optisimplicity-lab"
+```
 
-### Complexity of Optima
+Create and activate a virtual environment if necessary:
 
-Results from `outputs/complexity_optima.csv`:
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+```
 
-| Objective family  | Best objective | Number of optima | Optimum compressed length (bits) | Median population length (bits) |
-| ----------------- | -------------: | ---------------: | -------------------------------: | ------------------------------: |
-| Ones              |          10.00 |                1 |                               88 |                             128 |
-| Target similarity |          10.00 |                1 |                              120 |                             128 |
-| Structured blocks |          11.25 |                1 |                              112 |                             128 |
-| Random table      |          3.179 |                1 |                              144 |                             128 |
+Install dependencies:
 
-In this particular seeded experiment, the optimum for the ones objective has a shorter compressed representation than the population median. The target-similarity and structured-block optima are also shorter than the median, while the random-table optimum is longer.
+```powershell
+python -m pip install -r requirements.txt
+```
 
-**Interpretation:** These results illustrate that the relationship between compression length and objective quality depends on the objective. The four examples do not establish that simpler candidates are generally more likely to be optimal.
+If PowerShell blocks environment activation, use the Python executable inside `.venv` directly or follow your local execution policy.
 
-### Search Performance
+## Running the Experiments
 
-Selected results from `outputs/search_aggregates.csv`:
+First, inspect the available arguments:
 
-| Objective         | Algorithm           | Mean best objective | Mean optimality gap | Optimum success rate |
-| ----------------- | ------------------- | ------------------: | ------------------: | -------------------: |
-| Ones              | Hill climbing       |               10.00 |                0.00 |                 100% |
-| Ones              | Simplicity-biased   |               10.00 |                0.00 |                 100% |
-| Ones              | Simulated annealing |               10.00 |                0.00 |                 100% |
-| Ones              | Uniform random      |                9.00 |                1.00 |                   0% |
-| Target similarity | Hill climbing       |               10.00 |                0.00 |                 100% |
-| Target similarity | Simulated annealing |               10.00 |                0.00 |                 100% |
-| Target similarity | Simplicity-biased   |                8.00 |                2.00 |                   0% |
-| Target similarity | Uniform random      |                9.20 |                0.80 |                  20% |
-| Structured blocks | Hill climbing       |               11.25 |                0.00 |                 100% |
-| Structured blocks | Simulated annealing |               11.25 |                0.00 |                 100% |
-| Structured blocks | Simplicity-biased   |                8.70 |                2.55 |                   0% |
-| Structured blocks | Uniform random      |               10.25 |                1.00 |                  20% |
-| Random table      | Hill climbing       |               1.925 |               1.286 |                   0% |
-| Random table      | Simplicity-biased   |               2.444 |               0.767 |                  20% |
-| Random table      | Simulated annealing |               2.399 |               0.812 |                   0% |
-| Random table      | Uniform random      |               2.708 |               0.503 |                   0% |
+```powershell
+python -m optisimplicity.experiments.run_all --help
+```
 
-*Rates are aggregated over five seeded runs. Mean best objective and mean gap are averages over those runs.*
+Run the complete experiment suite using the baseline configuration:
 
-**Interpretation:**
+```powershell
+python -m optisimplicity.experiments.run_all `
+    --out outputs `
+    --n-bits 10 `
+    --seeds 5 `
+    --budget 250 `
+    --beta 0.25 `
+    --extrema-pairs 30 `
+    --null-samples 200 `
+    --seed 42
+```
 
-* Hill climbing and simulated annealing reliably found the optimum in the tested ones, target-similarity, and structured-block instances.
-* Simplicity-biased search did not consistently find the optimum in the target-similarity or structured-block experiments.
-* Uniform search explored more distinct candidates on average, but did not reliably find the optimum within the budget.
-* The random-table results show that a strategy's performance depends on the structure of the objective; a local search advantage is not guaranteed on an unstructured landscape.
-* Simplicity-biased sampling has additional computational overhead from calculating compressed representation lengths.
+The runner executes all three experiments and writes their artifacts to `outputs/`.
 
-These findings describe this finite benchmark and should not be generalized to large-scale optimization without further experiments.
+### Configuration
 
-### Coincidence of Extrema
+| Parameter | Value | Meaning |
+|---|---:|---|
+| `n_bits` | 10 | Number of bits in each candidate |
+| Candidate space | 1,024 | \(2^{10}\) binary candidates |
+| `seeds` | 5 | Search seeds per objective family |
+| `budget` | 250 | Objective-evaluation budget per search run |
+| `beta` | 0.25 | Simplicity-bias parameter |
+| `extrema_pairs` | 30 | Number of generated pair records |
+| `null_samples` | 200 | Null samples per pair record |
+| `seed` | 42 | Main experiment seed |
 
-The project evaluates 30 comparisons among the ones, target-similarity, and structured-block objectives, using 200 shuffled null samples per comparison.
+With four objective families, four search algorithms, and five search seeds, the benchmark contains **80 search runs**.
 
-Across the recorded comparisons:
+The extrema experiment produces 30 observed pair records and 6,000 null-sample records.
 
-* Observed optimal-set overlap was zero for every pair.
-* Each observed objective instance had a single optimum.
-* Most shuffled null comparisons also had zero overlap.
-* A small number of null comparisons produced nonzero overlap, illustrating that independently assigned optima can occasionally coincide by chance.
+---
 
-Because the optimal sets contain one candidate each, Jaccard overlap is either zero or one for each comparison. With only 200 null samples, rare coincidences may not appear in every comparison. The experiment therefore provides a small-scale illustration of the chosen null model, rather than strong evidence for a general theory of extrema.
+## Experimental Design
 
-## Project Outputs
+### Candidate representation
 
-The `outputs/` directory contains the generated experiment results, including:
+A candidate is an \(n\)-bit binary string represented internally by an integer in the range
 
-* `summary.json` — configuration, experiment summary, and caveats.
-* `complexity_optima.csv` — objective optima and compressed-length statistics.
-* `search_aggregates.csv` — aggregated search performance by objective and algorithm.
-* `extrema_pairs.csv` — observed extrema overlap and shuffled-null statistics.
-* `search_runs.csv` — per-run search measurements, including the objective instance's known optimum and the observed optimality gap.
+\[
+0 \leq x < 2^n.
+\]
 
-Exact filenames may depend on the current project version.
+For \(n=10\), the search space contains 1,024 candidates. Because the space is small enough to enumerate, globally optimal objective values and optimal sets can be calculated exactly.
 
-## Reproducibility
+### Objective families
 
-Run commands from the project root in PowerShell:
+| Objective | Construction | Purpose |
+|---|---|---|
+| `ones` | Number of one bits | Simple, regular objective |
+| `target_similarity` | Number of matching bits against a seeded binary target | Tests target-dependent structure |
+| `structured_blocks` | Repeating-pattern matches plus an adjacent-pair bonus | Tests structured objective design |
+| `random_table` | Seeded random score assigned to each candidate | Provides an irregular score landscape |
+
+All four objectives are maximized in the reported experiments.
+
+### Description-length proxy
+
+Each candidate is converted to a canonical fixed-width ASCII bitstring and compressed using zlib. The compressed size, converted to bits, is used as the description-length proxy.
+
+This procedure is deterministic for a fixed implementation and encoding. It is not a direct calculation of Kolmogorov complexity.
+
+---
+
+## Experiment A: Complexity of Optima
+
+### Objective
+
+Compare the description length of globally optimal candidates with the median and mean description lengths of all candidates.
+
+### Output
+
+`outputs/complexity_optima.csv`
+
+Important columns:
+
+- `problem`: objective family.
+- `n_bits`: candidate length.
+- `n_candidates`: total candidate count.
+- `best_objective`: globally optimal objective value.
+- `number_of_optima`: number of globally optimal candidates.
+- `mean_optimum_description_length_bits`: average compressed length of optimal candidates.
+- `median_all_description_length_bits`: population median.
+- `mean_all_description_length_bits`: population mean.
+- `optimum_minus_population_median_bits`: difference between optimum mean length and population median.
+
+A negative difference indicates that the optimal candidate is shorter under the chosen compression representation than the population median. A positive difference indicates a longer representation.
+
+### Baseline results
+
+For \(n=10\) and seed 42:
+
+| Objective | Best score | Optima | Optimum length (bits) | Population median (bits) |
+|---|---:|---:|---:|---:|
+| `ones` | 10.000 | 1 | 88 | 128 |
+| `target_similarity` | 10.000 | 1 | 120 | 128 |
+| `structured_blocks` | 11.250 | 1 | 112 | 128 |
+| `random_table` | 3.17885 | 1 | 144 | 128 |
+
+All four objective instances have one global optimum.
+
+The `ones` and `structured_blocks` optima have shorter compressed representations than the population median. The `target_similarity` optimum is also shorter, although the difference is smaller. The `random_table` optimum has a longer representation than the median.
+
+These observations show that optimality and compressed description length do not coincide uniformly across these synthetic objectives.
+
+They do not establish a general relationship between simplicity and optimization across arbitrary problem classes.
+
+---
+
+## Experiment B: Search Benchmark
+
+### Objective
+
+Compare four algorithms using a fixed objective-evaluation budget.
+
+Algorithms:
+
+1. **Uniform sampling:** Selects candidates uniformly from the binary search space.
+2. **Simplicity-biased sampling:** Uses the project's simplicity-bias mechanism to influence candidate selection.
+3. **Hill climbing:** Iteratively seeks improvements in the objective landscape.
+4. **Simulated annealing:** Uses a temperature-controlled acceptance mechanism to explore the landscape.
+
+The simplicity-biased sampler is an experimental heuristic, not a true implementation of universal algorithmic probability.
+
+### Outputs
+
+- `outputs/search_runs.csv`
+- `outputs/search_curves.csv`
+- `outputs/search_aggregates.csv`
+
+### Evaluation metrics
+
+| Metric | Interpretation |
+|---|---|
+| `mean_best_objective` | Mean best score achieved |
+| `mean_optimality_gap` | Mean difference from the global optimum |
+| `optimum_success_rate` | Fraction of runs reaching the exact optimum |
+| `mean_unique_candidates` | Mean number of distinct candidates evaluated |
+| `mean_runtime_seconds` | Mean measured execution time |
+
+For a maximization problem, the optimality gap is calculated relative to the globally optimal score. Lower gaps are better; zero indicates that the optimum has been reached.
+
+### Baseline results
+
+The following results were generated with five seeds and a budget of 250 evaluations per run.
+
+| Objective | Algorithm | Mean best score | Mean gap | Optimum success rate |
+|---|---|---:|---:|---:|
+| `ones` | Hill climbing | 10.000 | 0.000 | 100% |
+| `ones` | Simplicity-biased | 10.000 | 0.000 | 100% |
+| `ones` | Simulated annealing | 10.000 | 0.000 | 100% |
+| `ones` | Uniform | 9.000 | 1.000 | 0% |
+| `target_similarity` | Hill climbing | 10.000 | 0.000 | 100% |
+| `target_similarity` | Simplicity-biased | 8.000 | 2.000 | 0% |
+| `target_similarity` | Simulated annealing | 10.000 | 0.000 | 100% |
+| `target_similarity` | Uniform | 9.200 | 0.800 | 20% |
+| `structured_blocks` | Hill climbing | 11.250 | 0.000 | 100% |
+| `structured_blocks` | Simplicity-biased | 8.700 | 2.550 | 0% |
+| `structured_blocks` | Simulated annealing | 11.250 | 0.000 | 100% |
+| `structured_blocks` | Uniform | 10.250 | 1.000 | 20% |
+| `random_table` | Hill climbing | 1.92481 | 1.28622 | 0% |
+| `random_table` | Simplicity-biased | 2.44413 | 0.76690 | 20% |
+| `random_table` | Simulated annealing | 2.39940 | 0.81163 | 0% |
+| `random_table` | Uniform | 2.70817 | 0.50286 | 0% |
+
+### Interpretation
+
+The results suggest that search performance depends on the objective landscape.
+
+- Hill climbing and simulated annealing consistently find the optimum for `ones`, `target_similarity`, and `structured_blocks` in these five runs.
+- Simplicity-biased sampling performs well on `ones` but fails to reach the optimum in the observed `target_similarity` and `structured_blocks` runs.
+- Uniform sampling has the highest mean best score for `random_table`, although none of the algorithms reaches the exact optimum in these five runs.
+
+The random-table results are particularly useful because they demonstrate that a search heuristic does not automatically benefit from preferring simple candidates.
+
+These are descriptive results from a small experiment, not statistically conclusive algorithm rankings.
+
+### Runtime observations
+
+In this baseline run, the simplicity-biased sampler generally has a higher measured runtime than the other algorithms. The observed times are on the order of milliseconds.
+
+Runtime differences at this scale can be affected by Python overhead, hardware, and timer resolution. A more rigorous performance comparison should use repeated timing measurements and larger workloads.
+
+---
+
+## Experiment C: Coincidence of Extrema
+
+### Objective
+
+Measure overlap between optimal sets for different objective functions and compare the observed overlap against a shuffled-score null model.
+
+The implementation is contained in `run_extrema_experiment()` inside `optisimplicity/experiments/run_all.py`.
+
+### Observed objective pairs
+
+The three objective families used in this experiment are:
+
+- `ones`
+- `target_similarity`
+- `structured_blocks`
+
+The runner cycles through three ordered pairings:
+
+1. `ones` versus `target_similarity`
+2. `target_similarity` versus `structured_blocks`
+3. `structured_blocks` versus `ones`
+
+With 30 pair records, each pairing is repeated ten times with varying seeds where the objective definition uses its seed.
+
+These are repeated seeded instances of three family-pair categories, not 30 distinct objective-family pairs.
+
+### Null model
+
+For each pair, the experiment independently permutes the score arrays of both objectives.
+
+The permutation preserves each objective's score multiset and its number of optimal candidates while breaking the association between candidate identity and objective score.
+
+This provides a transparent randomized baseline for optimal-set overlap.
+
+It is not the only possible null model and should not be interpreted as a universal model of unrelated objective functions.
+
+### Outputs
+
+- `outputs/extrema_pairs.csv`
+- `outputs/extrema_null_samples.csv`
+
+The observed-pair output contains objective names, optimal-set sizes, intersection size, Jaccard overlap, and null-summary statistics.
+
+The null-sample output contains individual randomized overlap measurements for each pair record.
+
+### Metrics
+
+For optimal sets \(A\) and \(B\), Jaccard overlap is
+
+\[
+J(A,B)=\frac{|A\cap B|}{|A\cup B|}.
+\]
+
+The experiment also reports the intersection size and intersection relative to the smaller optimal set.
+
+### Baseline observations
+
+For the tested \(n=10\) instances, each objective has one optimum, and the observed optimal sets do not overlap in the 30 generated records.
+
+The null experiment generates 200 samples per pair, for 6,000 null records in total.
+
+Across all null records, the observed mean intersection size is approximately 0.00033, with values ranging from zero to one.
+
+Most null samples have zero overlap, which is expected for singleton optimal sets in a space of 1,024 candidates.
+
+Under independently randomized assignments with unique maxima, the probability that two singleton optima coincide is
+
+\[
+\frac{1}{1024}\approx 0.000977.
+\]
+
+The expected number of intersections in 200 null samples is therefore approximately 0.195 for a pair with singleton optimal sets.
+
+### Interpretation
+
+The observed zero overlap is consistent with the shuffled-score null model. It does not establish that the optima are unusually dissimilar.
+
+Because the three family-pair categories are repeated, their rows must not be treated as independent objective-family replications. Also, the `ones` and `structured_blocks` objectives are deterministic for a fixed bit width, whereas `target_similarity` changes with its seed.
+
+The results should be interpreted as a preliminary comparison of three synthetic family-pair categories under a particular randomization baseline.
+
+---
+
+## Observed Results
+
+The baseline experiment supports the following limited findings:
+
+1. **Optimality and compressibility differ across objectives.** The random-table optimum is less compressible than the population median under the chosen representation, while the other three optima are more compressible.
+2. **Search performance is objective-dependent.** Local search performs well on three structured objectives in the observed runs, while uniform sampling obtains the highest mean score on the random-table objective.
+3. **Simplicity bias is not uniformly beneficial.** Its performance varies across objective families, and it incurs additional computational overhead in this implementation.
+4. **Zero optimal-set overlap is not surprising under the chosen null model.** The singleton optimal sets and the small candidate space make the observed zero intersections consistent with the randomized baseline.
+5. **More extensive experiments are needed.** Five search seeds and 200 null samples per pair provide preliminary evidence rather than broad statistical conclusions.
+
+No hard-coded results are required by the experiment runner. Reported findings should always be tied to the configuration and CSV artifacts from the actual run.
+
+---
+
+## Testing and Validation
+
+Run the test suite from the project root:
 
 ```powershell
 python -m pytest -q
 ```
 
-To regenerate experiments, use the experiment runner configured for this repository. For example, if the script accepts the parameters shown in the project configuration:
+Check the generated files:
 
 ```powershell
-python -m optisimplicity.experiments.run_all
+Get-ChildItem .\outputs -File |
+    Select-Object Name, Length
 ```
 
-Check the script's argument parser or README configuration if the runner requires explicit command-line arguments.
+Inspect aggregate search results:
+
+```powershell
+Import-Csv .\outputs\search_aggregates.csv |
+    Format-Table -AutoSize
+```
+
+Inspect the optimum-complexity results:
+
+```powershell
+Import-Csv .\outputs\complexity_optima.csv |
+    Format-Table -AutoSize
+```
+
+Inspect the extrema results:
+
+```powershell
+Import-Csv .\outputs\extrema_pairs.csv |
+    Select-Object -First 10 |
+    Format-Table -AutoSize
+```
+
+The existence of output files confirms artifact generation, not the scientific validity of every conclusion. Tests should be used to validate code behavior, and experiment outputs should be examined independently.
+
+---
+
+## Reproducibility
+
+The experiment suite exposes parameters for:
+
+- Candidate bit width
+- Search seeds
+- Evaluation budget
+- Simplicity-bias strength
+- Number of extrema pair records
+- Null samples per pair
+- Main random seed
+
+To reproduce the baseline configuration, use the command in [Running the Experiments](#running-the-experiments).
+
+The generated `summary.json` records the experiment configuration, artifact names, and scientific caveats.
+
+Reproducibility also depends on the Python environment, dependency versions, implementation, and random-number generation behavior. Preserve the configuration and source revision when comparing different runs.
+
+---
 
 ## Limitations
 
-* **Small search space:** A 10-bit space contains only 1,024 candidates and is not representative of modern, high-dimensional optimization.
-* **Compression proxy:** zlib length depends on representation and compressor settings; it is not a direct measurement of Kolmogorov complexity.
-* **Heuristic simplicity prior:** The sampling distribution is a chosen compression-based heuristic, not universal algorithmic probability.
-* **Limited repetitions:** Five search seeds and 200 null samples per pair provide limited statistical resolution.
-* **Objective dependence:** Different objective families have different landscape structures, which can favor different search strategies.
-* **Null-model dependence:** Independently shuffled scores preserve score values and tie counts, but are only one way to construct a comparison baseline.
-* **No real-world validation:** The project does not establish performance on large language models, scientific discovery, or production optimization tasks.
+### 1. Description length is not Kolmogorov complexity
 
-## Conclusion
+Zlib compressed size depends on encoding and compression overhead. It is a practical proxy, not an implementation of the theoretical minimum description length of a string.
 
-OptiSimplicity Lab provides a reproducible sandbox for investigating the relationships between compressed description length, search behavior, and optimal-candidate overlap. Its results demonstrate that the performance of simplicity-biased and local-search strategies varies across synthetic objective families, and that observed extrema overlap should be interpreted relative to an explicit null model.
+### 2. Small candidate spaces
 
-The project is best presented as a **research-inspired experimental implementation** that makes its assumptions measurable and its limitations explicit, rather than as a reproduction or validation of a universal theory of simplicity and optimization.
+At ten bits, there are only 1,024 candidates. Results may change at larger bit widths or under different objective constructions.
+
+### 3. Synthetic objectives
+
+The four objective families are designed for controlled experimentation. They do not represent the full diversity of real-world combinatorial optimization problems.
+
+### 4. Limited search replications
+
+Five seeds per algorithm and objective provide a preliminary benchmark. Larger numbers of independent instances and seeds are needed for more stable comparisons.
+
+### 5. Simplicity-biased sampling is heuristic
+
+The sampler is not true universal algorithmic probability. Results should not be generalized to all possible simplicity-based search strategies.
+
+### 6. Null-model assumptions
+
+Independently shuffled score assignments preserve score distributions and tie counts but destroy candidate-score structure. Other null models may yield different overlap distributions.
+
+### 7. Repeated objective-pair categories
+
+Thirty generated pair records do not constitute thirty independent objective-family comparisons. Future versions should distinguish family-level effects from instance-level variation.
+
+### 8. Runtime measurement
+
+Millisecond-scale measurements may be sensitive to implementation overhead and machine conditions. Timing conclusions should be validated with larger workloads and repeated benchmarks.
+
+### 9. Generalization
+
+The experiments do not establish a universal law that simple solutions are always optimal, that simplicity-biased search is superior, or that unrelated objective functions cannot share extrema.
+
+---
+
+## Future Work
+
+Potential improvements include:
+
+- Evaluate additional bit widths and objective families.
+- Increase search seeds and null samples.
+- Add confidence intervals and appropriately designed statistical comparisons.
+- Separate objective-family comparisons from independently generated instances.
+- Investigate alternative null models for optimal-set overlap.
+- Compare multiple compression methods and representations.
+- Benchmark larger workloads to obtain more reliable runtime estimates.
+- Evaluate structured and random objectives with controlled variations in landscape properties.
+- Add plots for search trajectories, optimality gaps, description lengths, and null overlap distributions.
+- Compare simplicity-biased sampling against additional search heuristics under matched evaluation budgets.
+
+These extensions would help determine which findings are robust to changes in objective structure, encoding, search budget, and null-model assumptions.
+
+---
+
+## Reference
+
+Dingle, K., and Hutter, M. *Simplicity and Complexity in Combinatorial Optimization*. Entropy, 28(2), 226, 2026.
+
+Publication: https://doi.org/10.3390/e28020226
+
+---
+
+## Summary
+
+OptiSimplicity Lab provides a reproducible starting point for investigating the relationships between description length, optimization, search strategy, and optimal-set overlap.
+
+Its main contribution is an experimental framework with exact enumeration, controlled search budgets, seeded runs, explicit null-model assumptions, and inspectable artifacts. The current results illustrate that compressibility and optimality are not interchangeable, search performance depends on the objective landscape, and observed extrema overlap must be interpreted relative to a carefully chosen baseline.
+
+The findings are preliminary and apply to the synthetic objectives and configurations evaluated here. Broader claims require additional experiments and stronger statistical validation.
