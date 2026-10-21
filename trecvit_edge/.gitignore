@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+data/videos/
+artifacts/*.pt
+artifacts/*.json
+.streamlit/
+.pytest_cache/
