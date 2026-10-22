@@ -1,0 +1,4 @@
+dataset_name: Anthropic/hh-rlhf
+split: train
+max_rows: 5000
+note: Standard preference pairs do not guarantee identifiable rater IDs.
