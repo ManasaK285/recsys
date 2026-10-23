@@ -1,0 +1,30 @@
+[
+  {
+    "model":"global",
+    "accuracy":0.5766666667,
+    "log_loss":0.6809279277,
+    "brier":0.2439590343,
+    "n":600
+  },
+  {
+    "model":"independent",
+    "accuracy":0.5966666667,
+    "log_loss":0.6652946448,
+    "brier":0.2362540487,
+    "n":600
+  },
+  {
+    "model":"adaptive_reward_features",
+    "accuracy":0.5866666667,
+    "log_loss":0.6789254599,
+    "brier":0.2429825097,
+    "n":600
+  },
+  {
+    "model":"support_summary",
+    "accuracy":0.5266666667,
+    "log_loss":0.6906451342,
+    "brier":0.2487498431,
+    "n":600
+  }
+]

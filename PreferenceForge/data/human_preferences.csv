@@ -1,0 +1,2 @@
+user_id,prompt,response_a,response_b,label,a_helpfulness,b_helpfulness,a_clarity,b_clarity,a_detail,b_detail,a_concision,b_concision,a_safety,b_safety
+human_001,Explain how a hash table works.,A hash table maps keys to values using a hash function.,"A hash table is a data structure. First, a hash function transforms a key into an index. Collisions can be handled with chaining or open addressing. Average lookup is often O(1), though worst-case behavior can be slower.",1,0.6,0.7,0.6,0.7,0.6,0.7,0.6,0.7,0.6,0.7
