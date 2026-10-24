@@ -1,0 +1,17 @@
+README.md
+pyproject.toml
+src/collectivealign/__init__.py
+src/collectivealign/agents.py
+src/collectivealign/experiment.py
+src/collectivealign/metrics.py
+src/collectivealign/protocols.py
+src/collectivealign/reporting.py
+src/collectivealign/scenarios.py
+src/collectivealign_lab.egg-info/PKG-INFO
+src/collectivealign_lab.egg-info/SOURCES.txt
+src/collectivealign_lab.egg-info/dependency_links.txt
+src/collectivealign_lab.egg-info/requires.txt
+src/collectivealign_lab.egg-info/top_level.txt
+tests/test_experiment.py
+tests/test_protocols.py
+tests/test_scenarios.py

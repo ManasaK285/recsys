@@ -1,0 +1,30 @@
+{
+  "experiment": {
+    "name": "collectivealign-local-demo",
+    "seed": 42,
+    "trials": 120,
+    "group_size": 5,
+    "candidate_count": 4,
+    "identity_conditions": [
+      "anonymous",
+      "visible"
+    ],
+    "protocols": [
+      "independent_vote",
+      "free_discussion",
+      "evidence_first"
+    ],
+    "models": [
+      "competence",
+      "status_bias",
+      "identity_sensitive",
+      "random"
+    ],
+    "human_reference": {
+      "mode": "synthetic",
+      "note": "Synthetic reference only; not observations from the published study."
+    }
+  },
+  "data_mode": "synthetic",
+  "warning": "These are simulated results, not observations from the paper or real people."
+}

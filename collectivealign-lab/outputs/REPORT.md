@@ -1,0 +1,26 @@
+# CollectiveAlign Lab — Run Report\n\n**Data status:** synthetic simulation only; not human-subject data or a replication of the paper.\n\n- Trial rows: 2880\n- Models: competence, identity_sensitive, random, status_bias\n- Protocols: evidence_first, free_discussion, independent_vote\n\n## Mean metrics\n\n| model              | protocol         | condition   |   trials |   mean_optimality_gap |   median_optimality_gap |   mean_winner_qualification |   group_a_selection_rate |
+|:-------------------|:-----------------|:------------|---------:|----------------------:|------------------------:|----------------------------:|-------------------------:|
+| competence         | evidence_first   | anonymous   |      120 |           7.85211e-05 |               0         |                    0.894567 |                 0.475    |
+| competence         | evidence_first   | visible     |      120 |           7.85211e-05 |               0         |                    0.894567 |                 0.475    |
+| competence         | free_discussion  | anonymous   |      120 |           0.000512973 |               0         |                    0.894133 |                 0.475    |
+| competence         | free_discussion  | visible     |      120 |           0.000512973 |               0         |                    0.894133 |                 0.475    |
+| competence         | independent_vote | anonymous   |      120 |           0.000680363 |               0         |                    0.893966 |                 0.483333 |
+| competence         | independent_vote | visible     |      120 |           0.000680363 |               0         |                    0.893966 |                 0.483333 |
+| identity_sensitive | evidence_first   | anonymous   |      120 |           0.000100811 |               0         |                    0.894545 |                 0.458333 |
+| identity_sensitive | evidence_first   | visible     |      120 |           0.00252071  |               0         |                    0.892125 |                 0.433333 |
+| identity_sensitive | free_discussion  | anonymous   |      120 |           0           |               0         |                    0.894646 |                 0.458333 |
+| identity_sensitive | free_discussion  | visible     |      120 |           0.0198988   |               0         |                    0.874747 |                 0.383333 |
+| identity_sensitive | independent_vote | anonymous   |      120 |           0.000635604 |               0         |                    0.89401  |                 0.466667 |
+| identity_sensitive | independent_vote | visible     |      120 |           0.023263    |               0         |                    0.871383 |                 0.4      |
+| random             | evidence_first   | anonymous   |      120 |           0.015013    |               0         |                    0.879633 |                 0.458333 |
+| random             | evidence_first   | visible     |      120 |           0.015013    |               0         |                    0.879633 |                 0.458333 |
+| random             | free_discussion  | anonymous   |      120 |           0.112326    |               0.0580782 |                    0.78232  |                 0.5      |
+| random             | free_discussion  | visible     |      120 |           0.112326    |               0.0580782 |                    0.78232  |                 0.5      |
+| random             | independent_vote | anonymous   |      120 |           0.151714    |               0.113025  |                    0.742932 |                 0.441667 |
+| random             | independent_vote | visible     |      120 |           0.151714    |               0.113025  |                    0.742932 |                 0.441667 |
+| status_bias        | evidence_first   | anonymous   |      120 |           0.00402024  |               0         |                    0.890626 |                 0.591667 |
+| status_bias        | evidence_first   | visible     |      120 |           0.00402024  |               0         |                    0.890626 |                 0.591667 |
+| status_bias        | free_discussion  | anonymous   |      120 |           0.0194679   |               0         |                    0.875178 |                 0.741667 |
+| status_bias        | free_discussion  | visible     |      120 |           0.0194679   |               0         |                    0.875178 |                 0.741667 |
+| status_bias        | independent_vote | anonymous   |      120 |           0.0248183   |               0         |                    0.869828 |                 0.775    |
+| status_bias        | independent_vote | visible     |      120 |           0.0248183   |               0         |                    0.869828 |                 0.775    |\n\n## Interpretation cautions\n\n- Toy agents encode explicit rules and do not represent real LLMs.\n- Selection disparity is descriptive and can be affected by qualification distributions.\n- Identity sensitivity measures changed winners, not intent or a complete fairness judgment.\n- For inferential claims, pre-register hypotheses, justify sample size, and use appropriate human reference data.

@@ -1,0 +1,13 @@
+model,protocol,paired_trials,identity_sensitivity
+competence,evidence_first,120,0.0
+competence,free_discussion,120,0.0
+competence,independent_vote,120,0.0
+identity_sensitive,evidence_first,120,0.075
+identity_sensitive,free_discussion,120,0.25833333333333336
+identity_sensitive,independent_vote,120,0.2916666666666667
+random,evidence_first,120,0.0
+random,free_discussion,120,0.0
+random,independent_vote,120,0.0
+status_bias,evidence_first,120,0.0
+status_bias,free_discussion,120,0.0
+status_bias,independent_vote,120,0.0

@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "collectivealign-lab"
+version = "1.0.0"
+description = "Reproducible research-inspired benchmark for collective human-AI alignment"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "numpy>=1.24",
+  "pandas>=2.0",
+  "scipy>=1.10",
+  "matplotlib>=3.7",
+  "PyYAML>=6.0",
+  "pydantic>=2.0",
+  "tabulate>=0.9",
+]
+
+[project.optional-dependencies]
+dashboard = ["streamlit>=1.30", "plotly>=5.18"]
+dev = ["pytest>=7.4", "ruff>=0.3"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

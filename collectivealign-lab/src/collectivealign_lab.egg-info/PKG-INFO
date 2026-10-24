@@ -1,0 +1,144 @@
+Metadata-Version: 2.4
+Name: collectivealign-lab
+Version: 1.0.0
+Summary: Reproducible research-inspired benchmark for collective human-AI alignment
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: numpy>=1.24
+Requires-Dist: pandas>=2.0
+Requires-Dist: scipy>=1.10
+Requires-Dist: matplotlib>=3.7
+Requires-Dist: PyYAML>=6.0
+Requires-Dist: pydantic>=2.0
+Requires-Dist: tabulate>=0.9
+Provides-Extra: dashboard
+Requires-Dist: streamlit>=1.30; extra == "dashboard"
+Requires-Dist: plotly>=5.18; extra == "dashboard"
+Provides-Extra: dev
+Requires-Dist: pytest>=7.4; extra == "dev"
+Requires-Dist: ruff>=0.3; extra == "dev"
+
+# CollectiveAlign Lab
+
+**A complete, runnable research-inspired benchmark for collective human–AI alignment.**
+
+CollectiveAlign Lab studies how candidate presentation, agent behavior, and decision protocols affect group leader selection. It provides a reproducible synthetic simulator, matched anonymous/visible scenarios, baseline agent policies, multiple aggregation protocols, metrics, plots, a report, and an optional Streamlit dashboard.
+
+> **Scientific integrity:** Default results are synthetic outputs from explicitly coded toy agents. They are not observations from the paper *To Mask or to Mirror*, not real human-subject data, and not evidence of how commercial LLMs behave. The project is a working research scaffold that can later be extended with approved data and real provider adapters.
+
+## Research questions
+
+1. How often does the selected leader change when identity presentation changes but qualifications are held fixed?
+2. How do simple agent policies differ in task performance and selection rates?
+3. How do voting and deliberation protocols affect task-performance gaps and identity sensitivity?
+4. Can an evidence-first protocol improve task performance without increasing selection disparities?
+
+## Included components
+
+- Matched anonymous and identity-visible candidate scenarios.
+- Four transparent baselines: competence, status-bias stress test, identity-sensitive stress test, and random.
+- Three aggregation protocols: independent vote, free-discussion approximation, and evidence-first.
+- Trial-level CSV and JSONL records.
+- Summary metrics, selection disparity, paired identity sensitivity, plots, and Markdown report.
+- Streamlit dashboard with filters and CSV export.
+- Pytest suite.
+
+## Setup (Windows PowerShell)
+
+Use Python 3.10 or newer; Python 3.12 is recommended.
+
+```powershell
+py -3.12 -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install --upgrade pip
+python -m pip install -e ".[dev,dashboard]"
+```
+
+If you do not have Python 3.12 installed, create the environment with `py -m venv .venv` using a supported Python version.
+
+## Run tests
+
+```powershell
+python -m pytest -q
+```
+
+## Run the full local experiment
+
+```powershell
+python run_all.py --config configs/local.yaml --out outputs
+```
+
+Equivalent explicit entry point:
+
+```powershell
+python run_experiment.py --config configs/local.yaml --out outputs
+```
+
+The default configuration runs 120 matched scenarios across two identity conditions, four agent policies, and three protocols. It creates 2,880 result rows (120 × 2 × 4 × 3).
+
+## Launch dashboard
+
+After the benchmark has completed:
+
+```powershell
+streamlit run app.py
+```
+
+## Outputs
+
+| File | Description |
+|---|---|
+| `outputs/trial_results.csv` | One row per trial/model/protocol/condition |
+| `outputs/trial_results.jsonl` | JSON Lines version of the trial records |
+| `outputs/run_metadata.json` | Config snapshot and synthetic-data warning |
+| `outputs/summary_metrics.csv` | Mean and median task-performance metrics |
+| `outputs/identity_sensitivity.csv` | Paired trial winner-change rates |
+| `outputs/selection_disparity.csv` | Descriptive profile-group selection-rate differences |
+| `outputs/optimality_gap.png` | Performance comparison plot |
+| `outputs/identity_sensitivity.png` | Paired identity sensitivity plot |
+| `outputs/REPORT.md` | Automatically generated summary and caveats |
+
+## Metrics
+
+- **Optimality gap:** best available qualification score minus the elected candidate's qualification. Lower is better.
+- **Identity sensitivity:** proportion of matched trial/model/protocol comparisons where the winning candidate ID changes between anonymous and visible conditions.
+- **Selection disparity:** absolute difference in selection rates between synthetic profile groups A and B.
+- **Mean winner qualification:** average task qualification of elected candidates.
+
+These metrics answer different questions. Selection disparity is not by itself a fairness judgment, and identity sensitivity does not establish intent or explain the model's internal reasoning.
+
+## How the simulation works
+
+1. Each seed generates a candidate set with fixed qualification scores and profile groups.
+2. Matched anonymous and visible scenarios share the same candidate IDs, qualifications, profile groups, and task evidence.
+3. Each simulated agent scores candidates using a documented rule.
+4. Group scores are aggregated under a selected protocol.
+5. Trial outcomes are saved, summarized, plotted, and made available to the dashboard.
+
+The "free discussion" protocol is a deterministic aggregation approximation, not a real language-model conversation. The baseline agent names describe their coded behavior and should not be interpreted as empirical findings about any real model.
+
+## Extending it with real LLMs
+
+Add a provider adapter implementing a stable interface such as `rank_candidates(scenario, prompt_config) -> structured ranking`. Record provider, exact model/version, prompt template, decoding parameters, token usage, errors, and timestamps. Validate outputs and retain raw responses only when permitted by the provider terms and your data policy. Run paired scenarios with controlled prompts and randomize order. Never compare providers using different scenario distributions.
+
+This initial archive intentionally has no network calls or API-key requirement, so it can run locally and deterministically. It does not claim to include actual Gemini, GPT, Claude, or Gemma results.
+
+## Research design cautions
+
+- Do not infer demographic identity from names. Use controlled, ethically reviewed profile manipulations.
+- Do not collect human-subject data without appropriate consent and institutional review where required.
+- Pre-register hypotheses and analysis choices for confirmatory studies.
+- Use enough independent scenarios and appropriate uncertainty estimates; multiple agents in one group are not automatically independent experimental units.
+- If reproducing the cited paper, obtain the paper's actual data and methodology and clearly distinguish reproduction from extension.
+- Treat any synthetic "human reference" as a toy baseline only; this starter project does not generate or claim a real human cohort.
+
+## Paper
+
+Qian et al., “To Mask or to Mirror: Human-AI Alignment in Collective Reasoning,” EMNLP 2025.
+
+- Publication: https://aclanthology.org/2025.emnlp-main.122/
+- PDF: https://aclanthology.org/2025.emnlp-main.122.pdf
+
+## License
+
+MIT-style permissive starter; add a formal license file before public release if desired.
