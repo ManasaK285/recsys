@@ -1,0 +1,10 @@
+{"doc_id": "d1", "language": "en", "text": "Reset your account password from Settings, then choose Security and Password.", "category": "account"}
+{"doc_id": "d2", "language": "en", "text": "To request a refund, open Billing, select the purchase, and choose Request refund.", "category": "billing"}
+{"doc_id": "d3", "language": "en", "text": "Two-factor authentication adds a second verification step when signing in.", "category": "security"}
+{"doc_id": "d4", "language": "en", "text": "You can update your subscription plan from the account billing page.", "category": "billing"}
+{"doc_id": "d5", "language": "en", "text": "If you cannot sign in, verify your email address and use the password reset link.", "category": "account"}
+{"doc_id": "d6", "language": "es", "text": "Para solicitar un reembolso, abre Facturaci\u00f3n, selecciona la compra y elige Solicitar reembolso.", "category": "billing"}
+{"doc_id": "d7", "language": "fr", "text": "L\u2019authentification \u00e0 deux facteurs ajoute une deuxi\u00e8me \u00e9tape de v\u00e9rification \u00e0 la connexion.", "category": "security"}
+{"doc_id": "d8", "language": "en", "text": "The API rate limit controls how many requests a client can send in a time window.", "category": "developer"}
+{"doc_id": "d9", "language": "en", "text": "Create an API key in Developer Settings and store it securely.", "category": "developer"}
+{"doc_id": "d10", "language": "es", "text": "Puedes cambiar tu plan de suscripci\u00f3n desde la p\u00e1gina de facturaci\u00f3n de tu cuenta.", "category": "billing"}

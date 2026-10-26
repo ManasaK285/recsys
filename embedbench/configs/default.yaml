@@ -1,0 +1,6 @@
+model_name: google/embeddinggemma-300m
+device: auto
+batch_size: 16
+normalize_embeddings: true
+dimensions: [768, 512, 256, 128]
+top_k: 5

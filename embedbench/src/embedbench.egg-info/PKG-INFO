@@ -1,0 +1,5 @@
+Metadata-Version: 2.4
+Name: embedbench
+Version: 0.1.0
+Summary: Research-inspired embedding retrieval benchmark and semantic search demo
+Requires-Python: >=3.10

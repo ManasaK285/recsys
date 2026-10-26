@@ -1,0 +1,5 @@
+{"query_id": "q1", "query": "How do I change my password?", "language": "en", "relevant_doc_ids": ["d1", "d5"]}
+{"query_id": "q2", "query": "I want my money back for a purchase", "language": "en", "relevant_doc_ids": ["d2", "d6"]}
+{"query_id": "q3", "query": "How can I make login more secure?", "language": "en", "relevant_doc_ids": ["d3", "d7"]}
+{"query_id": "q4", "query": "Where can I change my subscription?", "language": "en", "relevant_doc_ids": ["d4", "d10"]}
+{"query_id": "q5", "query": "How do I create an API key?", "language": "en", "relevant_doc_ids": ["d9"]}
