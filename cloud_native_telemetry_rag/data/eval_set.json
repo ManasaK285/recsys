@@ -1,0 +1,6 @@
+[
+  {"query": "How is p95 latency used?", "relevant_document_ids": ["telemetry"]},
+  {"query": "How do I measure retrieval recall drift?", "relevant_document_ids": ["retrieval"]},
+  {"query": "What components are in the RAG service?", "relevant_document_ids": ["architecture"]},
+  {"query": "How should telemetry be stored in production?", "relevant_document_ids": ["telemetry", "architecture"]}
+]

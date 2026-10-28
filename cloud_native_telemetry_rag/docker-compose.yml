@@ -1,0 +1,12 @@
+services:
+  rag-observability:
+    build: .
+    container_name: rag-observability
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    environment:
+      DOCS_DIR: data/docs
+      EVAL_SET_PATH: data/eval_set.json
+    restart: unless-stopped
