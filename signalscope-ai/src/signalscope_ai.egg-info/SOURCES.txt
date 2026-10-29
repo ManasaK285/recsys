@@ -1,0 +1,17 @@
+README.md
+pyproject.toml
+src/signalscope/__init__.py
+src/signalscope/analytics.py
+src/signalscope/api.py
+src/signalscope/insights.py
+src/signalscope/schemas.py
+src/signalscope/simulator.py
+src/signalscope/storage.py
+src/signalscope_ai.egg-info/PKG-INFO
+src/signalscope_ai.egg-info/SOURCES.txt
+src/signalscope_ai.egg-info/dependency_links.txt
+src/signalscope_ai.egg-info/requires.txt
+src/signalscope_ai.egg-info/top_level.txt
+tests/test_analytics.py
+tests/test_insights.py
+tests/test_simulator.py

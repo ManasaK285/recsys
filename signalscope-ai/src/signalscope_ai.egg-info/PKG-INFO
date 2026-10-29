@@ -1,0 +1,252 @@
+Metadata-Version: 2.4
+Name: signalscope-ai
+Version: 1.0.0
+Summary: Evidence-grounded telemetry analytics platform
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: numpy>=1.26
+Requires-Dist: pandas>=2.1
+Requires-Dist: duckdb>=1.0
+Requires-Dist: pyarrow>=15.0
+Requires-Dist: fastapi>=0.110
+Requires-Dist: uvicorn[standard]>=0.27
+Requires-Dist: pydantic>=2.6
+Provides-Extra: dashboard
+Requires-Dist: streamlit>=1.32; extra == "dashboard"
+Requires-Dist: plotly>=5.20; extra == "dashboard"
+Requires-Dist: requests>=2.31; extra == "dashboard"
+Provides-Extra: dev
+Requires-Dist: pytest>=8.0; extra == "dev"
+
+# SignalScope AI — Intelligent Telemetry Analytics Platform
+
+**Turn telemetry events into evidence-backed engineering decisions.**
+
+SignalScope AI is an end-to-end research prototype that generates synthetic software-service telemetry, stores it in DuckDB and Parquet, detects anomalous behavior, compares software releases, and answers a limited set of natural-language analytics questions using computed evidence.
+
+The default analyst is deterministic and requires no LLM key. This is intentional: analytics code computes the findings, and the explanation layer should not invent measurements. An optional LLM can be added later behind a structured, evidence-validation layer.
+
+## Capabilities
+
+- Simulates 30 days of hourly telemetry across 50 services and 3 regions.
+- Injects a labelled regression affecting three services in `us-east`.
+- Validates and ingests telemetry through FastAPI/Pydantic.
+- Stores records in DuckDB and exports Parquet.
+- Detects unusual latency, error-rate, CPU, memory, and queue-depth behavior using robust baseline thresholds.
+- Compares release metrics with absolute/relative changes and sample counts.
+- Answers supported questions about regressions, anomalies, latency, and summaries.
+- Provides a Streamlit/Plotly dashboard, API docs, evaluation metrics, and tests.
+- Includes Docker packaging for the API.
+
+## Architecture
+
+```text
+Synthetic telemetry -> FastAPI/Pydantic -> DuckDB -> Parquet export
+                                      |
+                     +----------------+----------------+
+                     |                |                |
+               Anomaly detection  Release analysis  Evidence-grounded Q&A
+                     |                |                |
+                     +----------------+----------------+
+                                      |
+                            FastAPI + Streamlit
+                                      |
+                         Reproducible evaluation/tests
+```
+
+## Repository layout
+
+```text
+signalscope-ai/
+├── src/signalscope/
+│   ├── __init__.py
+│   ├── schemas.py
+│   ├── simulator.py
+│   ├── storage.py
+│   ├── analytics.py
+│   ├── insights.py
+│   └── api.py
+├── dashboard/app.py
+├── scripts/generate_demo.py
+├── scripts/run_evaluation.py
+├── tests/
+├── data/
+├── outputs/
+├── Dockerfile
+├── docker-compose.yml
+├── requirements.txt
+├── pyproject.toml
+└── README.md
+```
+
+## Requirements and installation (Windows PowerShell)
+
+Python 3.10 or newer is recommended. From the project root:
+
+```powershell
+py -0p
+py -3.11 -m venv .venv
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+.\.venv\Scripts\Activate.ps1
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
+python -m pip install -e .
+```
+
+If Python 3.11 is unavailable, replace `-3.11` with a version shown by `py -0p`. If activation is blocked, use `.\.venv\Scripts\python.exe` directly.
+
+## Quick start
+
+### 1. Generate telemetry
+
+```powershell
+python scripts\generate_demo.py
+```
+
+Defaults: 30 days, 50 services, 3 regions, hourly samples. The simulator injects a known regression for `checkout`, `search`, and `recommendations` in `us-east` during the final three days. It writes `data/telemetry.parquet` and loads the data into `data/signalscope.duckdb`.
+
+### 2. Start the API
+
+```powershell
+python -m uvicorn signalscope.api:app --reload
+```
+
+Open:
+- API docs: http://127.0.0.1:8000/docs
+- Health: http://127.0.0.1:8000/health
+- Summary: http://127.0.0.1:8000/summary
+- Anomalies: http://127.0.0.1:8000/anomalies
+- Release comparison: http://127.0.0.1:8000/releases/compare
+- Evaluation: http://127.0.0.1:8000/evaluation
+
+The API creates demo data on first startup if the database is empty. Run `generate_demo.py` to reset and reseed the dataset.
+
+### 3. Start the dashboard
+
+In a second PowerShell terminal, activate the environment and run:
+
+```powershell
+python -m streamlit run dashboard\app.py
+```
+
+Keep the API running in the first terminal.
+
+### 4. Ask an analytics question
+
+In `http://127.0.0.1:8000/docs`, call `POST /ask` with:
+
+```json
+{"question": "Which services regressed after the latest release?"}
+```
+
+Supported intents include release comparisons, anomaly investigation, highest-latency services, and telemetry summaries. Unsupported questions receive an explicit message instead of a fabricated answer.
+
+### 5. Evaluate and test
+
+```powershell
+python scripts\run_evaluation.py
+python -m pytest
+```
+
+Evaluation output is written to `outputs/evaluation.json`.
+
+## API endpoints
+
+| Endpoint | Purpose |
+|---|---|
+| `GET /health` | API health and telemetry row count |
+| `GET /summary` | Overall dataset summary |
+| `GET /metrics` | Basic Prometheus text exposition |
+| `GET /anomalies?limit=100` | Ranked anomaly evidence |
+| `GET /releases/compare` | Compare latest and previous releases |
+| `GET /releases/compare?service=checkout&region=us-east` | Filtered release comparison |
+| `GET /evaluation` | Precision, recall, F1, confusion counts |
+| `POST /telemetry` | Validate and ingest a batch of records |
+| `POST /ask` | Evidence-grounded natural-language analytics |
+
+### Ingestion payload
+
+`POST /telemetry` expects an object containing an `events` array:
+
+```json
+{
+  "events": [{
+    "timestamp": "2026-10-01T12:00:00Z",
+    "service": "checkout",
+    "region": "us-east",
+    "release": "v2.4.1",
+    "latency_p50_ms": 120,
+    "latency_p95_ms": 240,
+    "error_rate": 0.015,
+    "cpu_pct": 65,
+    "memory_pct": 71,
+    "request_count": 900,
+    "queue_depth": 12,
+    "is_injected_anomaly": true
+  }]
+}
+```
+
+The schema validates field types and ranges before ingestion. The Parquet export is refreshed after each accepted batch.
+
+## Analytics approach
+
+### Anomaly detection
+The detector uses the older release as the cohort baseline and compares each service-region cohort against robust statistics (median and interquartile range). It applies explicit thresholds to latency, error rate, CPU, memory, and queue depth, then assigns an anomaly score and severity. This is an interpretable baseline detector, not a guarantee that every alert is a real incident.
+
+### Release comparisons
+The platform aggregates metrics by release and reports old/new means, absolute change, percentage change, and sample counts. A regression occurring after a release is an association, not proof of causality. Investigate traces, deployment timing, traffic mix, and unaffected control cohorts before drawing causal conclusions.
+
+### Evidence-grounded analyst
+The question router calls the same analytics functions as the API and returns computed measurements, a time window, hypotheses to validate, and next checks. It is deliberately limited rather than an unrestricted LLM wrapper.
+
+## Evaluation
+
+The simulator labels injected-anomaly rows, allowing the evaluation script to calculate:
+- True positives, false positives, true negatives, and false negatives
+- Precision, recall, and F1
+- Total rows and detected rows
+
+**Run the evaluation and report the actual output.** The project does not claim production accuracy or throughput. These metrics are measured on synthetic data and may not represent real telemetry.
+
+For stronger research evaluation, run multiple seeds, vary anomaly magnitude and duration, add benign spikes and seasonality, measure detection delay, and benchmark several dataset sizes.
+
+## Docker
+
+```powershell
+docker compose up --build
+```
+
+Then open `http://127.0.0.1:8000/docs`. Local `data` and `outputs` folders are mounted as volumes.
+
+## Limitations
+
+- The data is synthetic; no production telemetry is collected.
+- The default analyst is a deterministic intent router, not an LLM.
+- This is a local DuckDB prototype; PySpark/distributed processing is a future extension.
+- Thresholds are heuristic and need calibration on representative data.
+- Latency estimates from small local runs are not production performance claims.
+- The API has no authentication, authorization, or production hardening.
+- Parquet is an export; DuckDB is the operational local store.
+
+## Future work
+
+1. Add PySpark and compare distributed processing with DuckDB.
+2. Add seasonality-aware and multivariate detectors.
+3. Add an optional LLM with structured output and evidence verification.
+4. Measure p50/p95/p99 latency, throughput, and detection delay.
+5. Add confidence intervals, authentication, rate limits, and deployment hardening.
+
+## Resume positioning
+
+Use measured results from your own run rather than unverified claims:
+
+**SignalScope AI — Intelligent Telemetry Analytics Platform**
+- Built a telemetry analytics platform using Python, FastAPI, DuckDB, and Parquet to analyze service performance and compare software releases.
+- Implemented robust-baseline anomaly detection and regression analysis for latency, error rate, resource utilization, and queue depth.
+- Developed evidence-grounded analytics responses and an interactive Streamlit dashboard.
+- Evaluated anomaly detection against controlled synthetic ground truth and added automated tests and reproducible evaluation scripts.
+
+## License
+
+Independent educational/research prototype. Add a license file before public distribution.

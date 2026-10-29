@@ -1,0 +1,8 @@
+services:
+  signalscope-api:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data
+      - ./outputs:/app/outputs
