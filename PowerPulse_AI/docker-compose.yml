@@ -1,0 +1,10 @@
+services:
+  powerpulse:
+    build: .
+    ports: ["8000:8000", "8501:8501"]
+    environment:
+      POWERPULSE_DATA_DIR: /app/data
+    volumes:
+      - powerpulse_data:/app/data
+volumes:
+  powerpulse_data:
